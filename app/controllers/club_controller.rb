@@ -17,7 +17,16 @@ class ClubController < ApplicationController
   end
 
   def club_destroy # db에서 동아리 삭제
+  # :univ_id, :club_id를 통해 메뉴 정보를 먼저 삭제
+  # 그다음에 :univ_id, :club_id를 통해 동아리 정보를 삭제
+  @club = Club.where(:univ_id => params[:univ_id],:id => params[:club_id]).take
+  @barmenus = Barmenu.where(:univ_id => params[:univ_id],:club_id => params[:club_id])
+  @barmenus.each do |barmenu|
+  barmenu.destroy
+  end
+  @club.destroy
   
+  redirect_to '#'
   end
 
   def club_update # edit에서 넘어온 것을 db에 저장해줌
@@ -32,6 +41,7 @@ class ClubController < ApplicationController
   def club_write # 동아리 정보 작성 
   @univ_id = params[:univ_id]
   @day=params[:day]
+  
   end
   
   
