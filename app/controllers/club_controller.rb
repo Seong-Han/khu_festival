@@ -1,6 +1,7 @@
 class ClubController < ApplicationController
   def club_create # write에서 넘어온 것을 db에 저장해줌
   new_club=Club.new
+  new_club.day=params[:day]
   new_club.univ_id=params[:univ_id]
   new_club.department_name=params[:department_name]
   new_club.club_name=params[:club_name]   
@@ -16,12 +17,15 @@ class ClubController < ApplicationController
   end
 
   def club_destroy # db에서 동아리 삭제
+  
   end
 
   def club_update # edit에서 넘어온 것을 db에 저장해줌
   end
 
   def club_edit # 수정페이지
+    
+  
   end
 
 
@@ -34,7 +38,7 @@ class ClubController < ApplicationController
   def menu_write # 주점 메뉴 작성
   
   
-  @menus=Barmenu.where(:univ_id => params[:univ_id],:club_id => params[:club_id]) # 대학 id로 찾은 menu
+  @menus=Barmenu.where(:univ_id => params[:univ_id],:club_id => params[:club_id]) # 대학 id,club id로 찾은 menu
  # @menus=Barmenu.all
 
   

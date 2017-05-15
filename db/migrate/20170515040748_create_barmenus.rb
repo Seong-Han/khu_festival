@@ -1,7 +1,6 @@
 class CreateBarmenus < ActiveRecord::Migration
   def change
     create_table :barmenus do |t|
-      t.integer :menu_number #각각 주점들의 번호
       t.string :menu_name #메뉴 이름 
       t.integer :menu_price #메뉴 가격
       t.integer :univ_id # 단과 대학 id

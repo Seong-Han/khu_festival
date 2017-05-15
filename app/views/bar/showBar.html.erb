@@ -1,9 +1,10 @@
   
-    <% @bar_list.each do |y| %>
+  
+    <% @Bars.each do |y| %>
         <div class="card">
-          <span class="card-header"><h2><%= y.bar_name %></h2>&nbsp;<%= y.club_name %></span> 
+          <span class="card-header"><h2>주점이름 : <%= y.bar_name %></h2>&nbsp;동아리 이름 : <%= y.club_name %></span> 
           <div class="card-block">
-            <h4 class="card-title"><%= y.bar_feature %></h4>
+            <h4 class="card-title">주점의 특징 : <%= y.bar_feature %></h4>
             <p class="card-text">
                      <table class="table">
                          <thead class="thead-inverse">
@@ -13,22 +14,26 @@
                                   <th>가격</th>
                              </tr>
                          </thead>
-                             <tbody
-                                <% @barmenu.each do |x| %> 
-                                <% if y.id == x.id %>  
+                             <tbody>
+                                <% y.barmenus.each do |x| %> 
+                                
                                   <tr>
-                                      <th scope="row"><%=x.id%></th>
+                                      <th scope="row"></th>
                                       <td><%=x.menu_name%></td>
                                       <td><%=x.menu_price%></td>
                                   </tr>
                                 <% end %>
-                                <% end %>
+                                
                             </tbody>
                      </table>
                    
               
             </p>
             <a href="#" class="btn btn-primary"><%= y.bar_location %>번 주점</a>
+            
+            <!-- 수정,삭제 구현-->
+            <a href="/club/edit/<%=y.univ_id%>/<%=y.id%>" class="btn btn-primary">주점 정보 수정</a>
+            <a href="/club/destroy/<%=y.univ_id%>/<%=y.id%>" class="btn btn-primary">주점 정보 삭제</a>
           </div>
         </div>
         <br>

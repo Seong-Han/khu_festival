@@ -18,14 +18,16 @@ Rails.application.routes.draw do
   get '/festival/day25' => 'festival#day25'
   get '/festival/day26' => 'festival#day26'
   get '/festival/write' => 'festival#write'
+  get '/festival/info' => 'festival#info'
   get '/festival/mul_front' => 'festival#mul_front'
   get '/festival/parking_lot' =>'festival#parking_lot'
   get '/festival/engineering_front' =>'festival#engineering_front'
   get '/festival/sns'
   get '/club/write' => 'club#club_write'
-  get '/club/edit' => 'club#club_edit'
+  get '/club/edit/:univ_id/:club_id' => 'club#club_edit'
   post '/club/create' => 'club#club_create'
-  post '/club/update' => 'club#club_update'
+  post '/club/update/:univ_id/:club_id' => 'club#club_update'
+  get '/club/destroy/:univ_id/:club_id' => 'club#club_destroy'
   get '/menuwrite/:univ_id/:club_id' => 'club#menu_write'
   post '/menucreate' => 'club#menu_create'
   
@@ -34,7 +36,7 @@ Rails.application.routes.draw do
   get '/sns/destroy/:comment_id' => 'sns#destroy'
 
   
-  get '/bar/aa'
+  get '/bar/:day/:univ_id' => 'bar#showBar'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
