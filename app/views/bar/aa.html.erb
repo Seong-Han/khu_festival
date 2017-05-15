@@ -1,12 +1,10 @@
-    <div class="container">
+  
     <% @bar_list.each do |y| %>
         <div class="card">
           <span class="card-header"><h2><%= y.bar_name %></h2>&nbsp;<%= y.club_name %></span> 
           <div class="card-block">
             <h4 class="card-title"><%= y.bar_feature %></h4>
             <p class="card-text">
-                <% @barmenu.each do |x| %> 
-                <% if y.id == x.id %>  
                      <table class="table">
                          <thead class="thead-inverse">
                              <tr>
@@ -15,26 +13,25 @@
                                   <th>가격</th>
                              </tr>
                          </thead>
-                             <tbody>
-                              
+                             <tbody
+                                <% @barmenu.each do |x| %> 
+                                <% if y.id == x.id %>  
                                   <tr>
                                       <th scope="row"><%=x.id%></th>
                                       <td><%=x.menu_name%></td>
                                       <td><%=x.menu_price%></td>
                                   </tr>
-                              
+                                <% end %>
+                                <% end %>
                             </tbody>
                      </table>
-                     
-                <% end %>
-            
+                   
+              
             </p>
-            
-            
-            
             <a href="#" class="btn btn-primary"><%= y.bar_location %>번 주점</a>
           </div>
         </div>
         <br>
+        
     <% end %>       
-    </div>
+    

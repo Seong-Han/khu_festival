@@ -1,10 +1,17 @@
+<style>
+  .custom-select{
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+</style>
 <h1>주점내역 작성하기</h1>
 <br>
 <form class="form-block" action="/club/create" method="POST">
   
   
   
-    <div class="form-group">
+    <div class="conainer form-group">
       <label class="mr-sm-2" for="inlineFormCustomSelect">주점 날짜를 선택해주세요.</label>
       <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="day">
         <option value="22">22일</option>
@@ -19,7 +26,7 @@
   
     <label class="mr-sm-2" for="inlineFormCustomSelect">소속 단과 대학을 선택해주세요.</label>
     
-    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="univ_id">
+    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="univ_id" style="margin-left:0; !important">
       <option value="1">공과대학</option>
       <option value="2">외국어대학</option>
       <option value="3">예술대학</option>

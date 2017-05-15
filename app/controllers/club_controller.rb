@@ -32,12 +32,14 @@ class ClubController < ApplicationController
   
   
   def menu_write # 주점 메뉴 작성
+  
+  
   @menus=Barmenu.where(:univ_id => params[:univ_id],:club_id => params[:club_id]) # 대학 id로 찾은 menu
-    
+ # @menus=Barmenu.all
+
   
-  
-  @menu_name =params[:menu_name]
-  @menu_price =params[:menu_price]
+  @menu_name = params[:menu_name]
+  @menu_price = params[:menu_price]
   
   
   end

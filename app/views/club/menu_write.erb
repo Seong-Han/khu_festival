@@ -24,10 +24,10 @@
   </thead>
   <tbody>
       
-   
+             
       <% @menus.each do |x| %>
           <tr>
-              <th scope="row"><%=x.id%></th>
+              <th scope="row"></th>
               <td><%=x.menu_name%></td>
               <td><%=x.menu_price%></td>
           </tr>
@@ -40,6 +40,11 @@
   <form class="form-block" action="/menucreate" method="POST">
   
 <br>  
+  <<div class="form-group">
+    <label for="formGroupExampleInput">메뉴 번호</label>
+    <input type="number" class="form-control" id="formGroupExampleInput" placeholder="순서대로 숫자 입력" name="menu_nember">
+  </div> 
+
   <div class="form-group">
     <label for="formGroupExampleInput">메뉴 이름</label>
     <input type="text" class="form-control" id="formGroupExampleInput" name="menu_name" required>

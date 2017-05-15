@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170515040748) do
+ActiveRecord::Schema.define(version: 20170515135451) do
 
   create_table "barmenus", force: :cascade do |t|
     t.string   "menu_name"
@@ -42,6 +42,11 @@ ActiveRecord::Schema.define(version: 20170515040748) do
   end
 
   create_table "migrates", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "places", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
  
 
+  get 'place/mul_front'
+
+  get 'place/parking_lot'
+
+  get 'place/engineering_front'
+
   devise_for :users
 
   root 'festival#index'
@@ -12,6 +18,9 @@ Rails.application.routes.draw do
   get '/festival/day25' => 'festival#day25'
   get '/festival/day26' => 'festival#day26'
   get '/festival/write' => 'festival#write'
+  get '/festival/mul_front' => 'festival#mul_front'
+  get '/festival/parking_lot' =>'festival#parking_lot'
+  get '/festival/engineering_front' =>'festival#engineering_front'
   get '/festival/sns'
   get '/club/write' => 'club#club_write'
   get '/club/edit' => 'club#club_edit'
