@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <!-- 뷰포트 메타태그! -->
+  <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 부트스트랩 4 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <style>
+  @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+body{
+    font-family: 'Jeju Hallasan', cursive;
+}
+
+  /*회원가입 css*/
+.nav-item{
+   background-color : gray;
+ 
+   
+  }
+.nav-link{
+  color: white;
+  font-size:15px;
+}
+.nav-header {
+    height: 50px;
+    background: #eeeeee;
+    padding-top: 14px;
+    font-size: 13px
+    
+    }
+    
+  /*메뉴 css*/
+.menu, .nav-submenu{
+    background-color: #c43b54;
+    text-align: center;
+    font-size:15px;
+    color: white;
+}
+.menu{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 드롭다운 했을때 나오는메뉴 css */
+.menu ul ul{
+  display:none;
+  background-color: #c43b54;
+  font-size:15px;
+  color: white;
+  position: absolute;
+}
+
+.menu ul li:hover ul{
+  display:block;
+  
+}
+
+ /* 서브 메뉴 css */
+@media screen and (max-width:480px) {
+            #menu {
+              width: auto;
+            }
+            #nav-submenu {
+              float: none;
+              width: auto;
+            }
+    }
+
+  /*로고 css*/
+.nav-logo {
+background: white;
+padding-top: 25px;
+height: 100px;
+}
+.likelion {
+    height:100px;
+}
+.lion_image{
+    margin-top : 10px;
+    margin-bottom : 10px;
+    
+    width :100px;
+    
+  }
+.row{
+  
+  width: 50px;
+  height: 50px;
+}
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+  <div class="header">
+      <div class="first">
+        <ul class="nav justify-content-end" >
+           
+          <% if user_signed_in? %>
+          <li class="nav-item" style="width:80px; color:white;  padding:10px 0 10px 15px; font-size:15px; line-height:22.5px">
+            <%= current_user.name %>
+          </li>
+              <% if current_user.admin %>
+                <li class="nav-item" style="font-size:15px">
+                  <%# <a class="nav-link" href="/users/sign_out">로그아웃</a> %>
+                   <%= link_to '글쓰기', club_write_path %></li>
+                </li>
+                <% end %>
+          <li class="nav-item" style="font-size:15px">
+            <%# <a class="nav-link" href="/users/sign_out">로그아웃</a> %>
+             <%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/sign_in">로그인</a>
+          </li>
+    
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/users/sign_up">회원가입</a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="menu">
+        <ul class="container nav nav-pills">
+          <li role="presentation"><a class="nav-submenu" href="/festival/index">Home</a></li>
+          <li role="presentation"><a class="nav-submenu" href="/festival/day22">22일</a></li>
+          <li role="presentation"><a class="nav-submenu" href="/festival/day23">23일</a></li>
+          <li role="presentation"><a class="nav-submenu" href="/festival/day24">24일</a></li>
+          <li role="presentation"><a class="nav-submenu" href="/festival/day25">25일</a></li>
+          <li role="presentation"><a class="nav-submenu" href="/festival/day26">26일</a></li>
+          <li role="presentation"><a class="nav-submenu" href="#">informations</a>
+              <ul>
+                  <li><a href="/festival/eng">공대</a></li>
+                  <li><a href="#">외대</a></li>
+                  <li><a href="#">멀관</a></li>
+                  <li><a href="#">체대</a></li>
+                  <li><a href="#">생대</a></li>
+                  <li><a href="#">국제대</a></li>
+                  <li><a href="#">자대</a></li>
+                  <li><a href="#">학관</a></li>
+              </ul>
+          </li>
+        
+        </ul>
+      </div>
+  
+      <div class="likelion">
+        <div class="row">
+          <div class="col-md-4 offset-md-3">
+            <img class="lion_image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC_%EB%A1%9C%EA%B3%A0.png/554px-%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC_%EB%A1%9C%EA%B3%A0.png"> 
+             
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+<div id="wrapper">
+ <h1 style="text-align:center"> <%= flash[:alert] %> </h1>
+  <%= yield %>
+
+</div>
+</body>
+</html>
