@@ -27,13 +27,6 @@ class FestivalController < ApplicationController
     end
     
 
-            
-            
-    def eng # 공과대학
-    @clubs=Club.all
-    
-    
-    end
     
 
 end

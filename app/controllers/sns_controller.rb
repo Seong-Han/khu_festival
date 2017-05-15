@@ -18,9 +18,4 @@ class SnsController < ApplicationController
   redirect_to "/sns/main"
   end
 
-  def edit
-  end
-
-  def update
-  end
 end
