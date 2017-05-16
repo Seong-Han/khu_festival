@@ -1,5 +1,5 @@
   
-  
+
     <% @Bars.each do |y| %>
         <div class="card">
           <span class="card-header"><h2>주점이름 : <%= y.bar_name %></h2>&nbsp;동아리 이름 : <%= y.club_name %></span> 
@@ -32,11 +32,16 @@
             <a href="#" class="btn btn-primary"><%= y.bar_location %>번 주점</a>
             
             <!-- 수정,삭제 구현 ;이 버튼들은 관리자 계정만 보일 수 있도록 해야합니다-->
+            <% if user_signed_in? %>
+            <% if current_user.admin %>
             <a href="/club/edit/<%=y.univ_id%>/<%=y.id%>" class="btn btn-primary">주점 정보 수정</a>
             <a href="/club/destroy/<%=y.univ_id%>/<%=y.id%>" class="btn btn-primary">주점 정보 삭제</a>
+            <% end %>
+            <% end %>
           </div>
         </div>
         <br>
         
-    <% end %>       
+    <% end %>  
+    
     
