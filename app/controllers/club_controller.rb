@@ -33,11 +33,29 @@ class ClubController < ApplicationController
   redirect_to '#'
   end
 
-  def club_update # edit에서 넘어온 것을 db에 저장해줌
+  def club_update # club_edit.html.erb 에서 넘어온 것을 db에 저장해줌
+  @registeredClub=Club.find(params[:club_id])
+  @registeredClub.day=params[:day]
+  @registeredClub.univ_id=params[:univ_id]
+  @registeredClub.department_name=params[:department_name]
+  @registeredClub.club_name=params[:club_name]
+  @registeredClub.bar_name=params[:bar_name]
+  @registeredClub.bar_location=params[:bar_location]
+  @registeredClub.bar_feature=params[:bar_feature]
+  @registeredClub.save
+  club_idStr=@registeredClub.id.to_s
+  univ_idStr=@registeredClub.univ_id.to_s
+  url="/menuedit/"+univ_idStr+"/"+club_idStr
+  redirect_to url  # 메뉴 수정 페이지로 이동.
   end
 
   def club_edit # 수정페이지
     
+  
+  @univ_id=params[:univ_id]
+  @club_id=params[:club_id]
+  @registeredClub=Club.find(params[:club_id]) # 등록했었던 club 을 찾아온다.
+  
   
   end
 
@@ -64,6 +82,7 @@ class ClubController < ApplicationController
   
   def menu_create # menu_write 에서 작성된 주점 메뉴를 db에 저장
   new_menu=Barmenu.new
+  
   new_menu.menu_name=params[:menu_name]
   new_menu.menu_price=params[:menu_price]
   new_menu.univ_id=params[:univ_id]
@@ -77,10 +96,21 @@ class ClubController < ApplicationController
   end
 
   def menu_destroy # 주점 메뉴를 삭제.
-
+  @menu=Barmenu.find(params[:menu_id])
+  @menu.destroy
+  @univ_id=params[:univ_id]
+  @club_id=params[:club_id]
+  univ_idStr=@univ_id.to_s
+  club_idStr=@club_id.to_s
+  url="/menuedit/"+univ_idStr+"/"+club_idStr
+  redirect_to url
   end
 
   def menu_edit # 주점 메뉴 수정 
+  @club_id=params[:club_id]
+  @univ_id=params[:univ_id]
+  @menus=Barmenu.where(:univ_id => params[:univ_id],:club_id => params[:club_id])
+  
   
   end
   

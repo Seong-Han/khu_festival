@@ -26,10 +26,12 @@ Rails.application.routes.draw do
   get '/club/write' => 'club#club_write'
   get '/club/edit/:univ_id/:club_id' => 'club#club_edit'
   post '/club/create' => 'club#club_create'
-  post '/club/update/:univ_id/:club_id' => 'club#club_update'
+  post '/club/update/:club_id' => 'club#club_update'
   get '/club/destroy/:univ_id/:club_id' => 'club#club_destroy'
   get '/menuwrite/:univ_id/:club_id' => 'club#menu_write'
   post '/menucreate' => 'club#menu_create'
+  get '/menuedit/:univ_id/:club_id' => 'club#menu_edit'
+  get '/menudestroy/:univ_id/:club_id/:menu_id' => 'club#menu_destroy'
   
   get '/sns/main' => 'sns#main'
   post 'sns/create'

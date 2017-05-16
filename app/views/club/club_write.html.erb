@@ -5,6 +5,14 @@
   margin-right: auto;
   }
 </style>
+<script>
+         	function btn_is_alert(){
+      	  /* alert(문자열) */
+      	  alert("주점 정보(메뉴 제외)가 등록되었습니다.");
+      	  
+      	}
+  
+</script>
 <h1>주점내역 작성하기</h1>
 <br>
 <form class="form-block" action="/club/create" method="POST">
@@ -49,7 +57,7 @@
     -->
     <div class="form-group">
       <label for="formGroupExampleInput">소속 학과 입력</label>
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ex)컴퓨터공학과. 중앙동아리는 중앙동아리라고 적어주세요" name="major_name" required>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ex)컴퓨터공학과. 중앙동아리는 중앙동아리라고 적어주세요" name="department_name" required>
     </div>
     <br>
     
@@ -183,7 +191,7 @@
   </div>
 
   
-  <button type="submit" class="btn btn-primary">메뉴작성하러가기</button>
+  <button type="submit" class="btn btn-primary" onclick="btn_is_alert();">메뉴작성하러가기</button>
   <!-- 예외처리 해야함: 필수 사항(동아리 이름, 주점 이름, 주점 위치) 가 입력이 안되면 메뉴작성이 안되게 해야함-->
   
   
