@@ -1,4 +1,8 @@
 class ClubController < ApplicationController
+  before_action :authenticate
+  before_action :authenticate_admin
+  
+  
   def club_create # write에서 넘어온 것을 db에 저장해줌
   new_club=Club.new
   new_club.day=params[:day]

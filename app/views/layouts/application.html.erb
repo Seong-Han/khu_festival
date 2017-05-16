@@ -1,143 +1,132 @@
 <!DOCTYPE html>
 <html>
-<head>
-  
-  <!-- 뷰포트 메타태그! -->
- <meta name="viewport" content="width=device-width,  initial-scale=1.0"> 
-  <!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <head>
+  <meta charset="utf-8">
+    <!-- 뷰포트 메타태그! -->
+  <meta name="viewport" content="width=device-width,  initial-scale=1.0"> 
+  <!-- 부트스트랩 4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-<!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<!-- 부트스트랩 4 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <title>Workspace</title>
+  <title>Khu-festival</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <style>
-  @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-
-body{
-    font-family: 'Jeju Hallasan', cursive;
-}
-
-  /*회원가입 css*/
-.nav-item{
-   background-color : gray;
- 
+<%#  @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+  @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+  
+  body{
+      font-family: 'Jeju Hallasan', cursive;
+  } %>
+  
+    /*회원가입 css*/
+    
+  .nav-item{
+     background-color : gray;
    
-  }
-.nav-link{
-  color: white;
-  font-size:15px;
-}
-.nav-header {
-    height: 50px;
-    background: #eeeeee;
-    padding-top: 14px;
-    font-size: 13px
-    
+     
     }
-    
-  /*메뉴 css*/
-.menu, .nav-submenu{
-    background-color: #c43b54;
-    text-align: center;
-    font-size:20px;
+  .nav-link{
     color: white;
-}
-.menu{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* 드롭다운 했을때 나오는메뉴 css */
-.menu ul ul{
-  display:none;
-  background-color: #c43b54;
-  font-size:15px;
-  color: white;
-  position: absolute;
-}
-
-.menu ul li:hover ul{
-  display:block;
+    font-size:15px;
+  }
+  .nav-header {
+      height: 50px;
+      background: #eeeeee;
+      padding-top: 14px;
+      font-size: 13px
+      
+      }
+      
+    /*메뉴 css*/
+  .menu, .nav-submenu{
+      background-color: #c43b54;
+      text-align: center;
+      font-size:18px;
+      color: white;
+  }
+  .menu{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   
-}
-
- /* 서브 메뉴 css */
-@media screen and (max-width:480px) {
-            #menu {
-              width: auto;
-            }
-            #nav-submenu {
-              float: none;
-              width: auto;
-            }
-    }
-
-  /*로고 css*/
-.nav-logo {
-background: white;
-padding-top: 25px;
-height: 100px;
-}
-.likelion {
-    height:100px;
-}
-.lion_image{
-    margin-top : 10px;
-    margin-bottom : 10px;
-    
-    width :100px;
+  /* 드롭다운 했을때 나오는메뉴 css */
+  .menu ul ul{
+    display:none;
+    background-color: #c43b54;
+    font-size:15px;
+    color: white;
+    position: absolute;
+  }
+  
+  .menu ul li:hover ul{
+    display:block;
     
   }
-.row{
   
-  width: 50px;
-  height: 50px;
-}
+   /* 서브 메뉴 css */
+  @media screen and (max-width:480px) {
+              #menu {
+                width: auto;
+              }
+              #nav-submenu {
+                float: none;
+                width: auto;
+              }
+      }
+  
+    /*로고 css*/
+  .nav-logo {
+  background: white;
+  padding-top: 25px;
+  height: 100px;
+  }
+  .likelion {
+      height:100px;
+  }
+  .lion_image{
+      margin-top : 10px;
+      margin-bottom : 10px;
+      
+      width :100px;
+      
+    }
+  .row{
+    
+    width: 50px;
+    height: 50px;
+  }
   </style>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   
 </head>
 <body style="overflow-x:hidden">
-  <div class="container">
+  
     <div class="header">
         <div class="first">
           <ul class="nav justify-content-end" >
              
             <% if user_signed_in? %>
-            <li class="nav-item" style="width:80px; color:white;  padding:10px 0 10px 15px; font-size:15px; line-height:22.5px">
+            <li class="nav-item" style="width:80px; color:white;  padding:10px 0 10px 15px; font-size:20px; line-height:30px">
               <%= current_user.name %>
             </li>
                 <% if current_user.admin %>
-                  <li class="nav-item" style="font-size:15px">
+                  <li class="nav-item" style="font-size:20px; padding:10px 7px;  line-height:30px">
                     <%# <a class="nav-link" href="/users/sign_out">로그아웃</a> %>
                      <%= link_to '글쓰기', club_write_path %></li>
                   </li>
                   <% end %>
-            <li class="nav-item" style="font-size:15px">
+            <li class="nav-item" style="font-size:20px;  padding:10px 7px; line-height:30px;">
               <%# <a class="nav-link" href="/users/sign_out">로그아웃</a> %>
                <%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
             </li>
+            
             <% else %>
-            <li class="nav-item">
+            <li class="nav-item" style="width:90px; color:white;  padding:10px 0 10px 15px; font-size:20px">
               <a class="nav-link" href="/users/sign_in">로그인</a>
             </li>
-      
-            
-            <li class="nav-item">
+            <li class="nav-item" style="font-size:20px;  padding:10px 7px;">
               <a class="nav-link" href="/users/sign_up">회원가입</a>
             </li>
             <% end %>
@@ -156,6 +145,7 @@ height: 100px;
           </ul>
         </div>
     
+    <%#
         <div class="likelion">
           <div class="row">
             <div class="col-md-4 offset-md-3">
@@ -165,13 +155,16 @@ height: 100px;
           </div>
         </div>
     </div>
+  %>
   
-  
-    <div id="wrapper">
+    <div class="container">
       <h1 style="text-align:center"> <%= flash[:alert] %> </h1>
       <%= yield %>
-  
-  </div>
+    </div>
+
 </div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
 </html>

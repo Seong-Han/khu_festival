@@ -1,21 +1,23 @@
-<h1>하하하하하하하하 소통하러 왔구나?</h1>
-<form action="/sns/create" method="post">
-     <div class="form-group">
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="EXID 짱짱" name="content" required>
-    </div>
-     <button type="submit" class="btn btn-primary">제출</button>
-</form>
+<div class="container mt-5" >
+  <h1>경희인들의 소통의 장</h1>
+  <form action="/sns/create" method="post">
+       <div class="form-group">
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="EXID 짱짱" name="content" required>
+      </div>
+       <button type="submit" class="btn btn-outline-danger mb-5">댓글 작성</button>
+  </form>
+  
+  <% @comments.each do |x| %>
+  <ul style=list-style:none;>
+   <li>
+        <span><%= x.user.name %></span>
+        <span><%= x.created_at %></span>
+        <p><%= x.comment %></p>
+         <% if x.user.id == current_user.id %>
+           <a href= "/sns/destroy/<%=x.id%>">삭제</a>
+         <% end %>
+   </li>
+  </ul>
+  <% end %>
 
-<% @comments.each do |x| %>
-<ul>
- <li>
-      <span><%= x.user.name %></span>
-      <span><%= x.created_at %></span>
-      <p><%= x.comment %></p>
-       <% if x.user.id == current_user.id %>
-         <a href= "/sns/destroy/<%=x.id%>">삭제</a>
-       <% end %>
- </li>
-</ul>
-<% end %>
-
+</div>
