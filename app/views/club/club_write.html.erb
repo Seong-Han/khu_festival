@@ -21,10 +21,10 @@
     <form class="form-block" action="/club/create" method="POST">
         <div class="conainer form-group">
             <label class="mr-sm-2" for="inlineFormCustomSelect">주점 날짜를 선택해주세요.</label><br>
-            <%(22...26).each do |day|%>
-            <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox1" value="<%=day%>"> <%=day%>일
-            </label>
+            <%(22..26).each do |day|%>
+              <label class="radio-inline">
+              <input type="radio" id="inlineRadio<%=day%>" value="<%=day%>" name="day"> <%=day%>일
+              </label>
             <%end%>
           
           <!--<select class="custom-select ml-0" id="inlineFormCustomSelect" name="day" >
@@ -39,7 +39,7 @@
         <br>
         <%{"1"=>"공과대학", "2"=>"외국어대학", "3"=>"예술디자인대학", "4"=>"체육대학", "5"=>"국제대학", "6"=>"전자정보대학", "7"=>"생명과학대학", "8"=>"멀티미디어관", "9"=>"학생회관"}.each do |map_key, map_value|%>
         <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio<%=map_key%>" value="<%=map_key%>"> <%=map_value%>
+            <input type="radio" name="univ_id" id="inlineRadio<%=map_key%>" value="<%=map_key%>"> <%=map_value%>
         </label>
         <%end%>
         
@@ -85,104 +85,20 @@
       <div class="form-group">
         
       <script>
-         
+      $(document).ready(function(){
+          $(':radio[name="univ_id"]').click(function() {
+              $(".map_img").hide();
+            var day_val=$(':radio[name="day"]:checked').val();
+            var univ_val=$(':radio[name="univ_id"]:checked').val();
+              $("#"+day_val+'_'+univ_val).show();
+            });
+      });
       </script>
       
-      /<% case @univ_id  %>
-        <%   when  1 %>
-                  <% case @day %>
-                        <% when 22 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 23 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 23일 주점 지도출력-->
-                        <% when 24 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 24일 주점 지도출력-->
-                        <% when 25 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 25일 주점 지도출력-->
-                        <% when 26 %>
-                           <img src="/assets/26일공대.jpg" alt="주점지도">                        <!-- 공대 26일 주점 지도출력-->                       
-                  <% end %>
-        <%   when 2 %>
-                  <% case @day %>
-                        <% when 22 %>
-                           <img src="..." alt="주점지도">                        <!--  22일 주점 지도출력-->
-                        <% when 23 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 24 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 25 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 26 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->                       
-                  <% end %>
-        <%   when 3 %>
-                  <% case @day %>
-                        <% when 22 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 23 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 24 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 25 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 26 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->                       
-                  <% end %>              
-        <%   when 4 %>
-                  <% case @day %>
-                        <% when 22 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 23 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 24 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 25 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 26 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->                       
-                  <% end %>
-        <%   when 5 %>
-                  <% case @day %>
-                        <% when 22 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 23 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 24 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 25 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 26 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->                       
-                  <% end %>
-        <%   when 6 %>
-                  <% case @day %>
-                        <% when 22 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 23 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 24 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 25 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 26 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->                       
-                  <% end %>
-        <%   when 7 %>
-                  <% case @day %>
-                        <% when 22 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 23 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 24 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 25 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                        <% when 26 %>
-                           <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->                       
-                  <% end %>
-                  
-        
-        <% end %>
+      <div class="map_img" id="26_1" style="display:none;"> <!-- 26일을 누르고,  공과대학(univ_id =1)을 눌렀을 때 사진이 뜬다.   -->
+        <img src="/assets/26_1.jpg" alt="주점지도" style="display:block;">
+      </div>
+      
         
       </div>
     

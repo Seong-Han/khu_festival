@@ -13,14 +13,21 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <style>
-<%#  @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
-  @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-  
-  body{
-      font-family: 'Jeju Hallasan', cursive;
-  } %>
-  
+
+  ul{list-style:none;}
+    a:link{text-decoration:none;color:white;}
+   a:visited{color:white;} 
     /*home메뉴*/
+    .btn {
+      font-size:1.5rem;
+    }
+    @media screen and (max-width: 768px){
+    .btn{
+       font-size:1rem;
+       padding:8px 4px;
+    }
+      
+    }
     .body{
       box-sizing: inherit;
     }
@@ -31,11 +38,13 @@ button:hover{
   cursor:pointer;
   
 }
+.a{text-decoration:none;}
 .a:hover{
   background-color : #9B191A !important;
   border-color:#9B191A !important;
   color: white !important;
   cursor:pointer;
+  text-decoration:none;
 }
 .b:hover{
     background-color : white !important;
@@ -53,6 +62,7 @@ button:hover{
   opacity: 0.3;
   filter: alpha(opacity=20);
   cursor:pointer;
+  
 }
     .front_menu{
       background-color : #9B191A;
@@ -84,29 +94,79 @@ button:hover{
     a:link{text-decoration:none;color:#9B191A;}
     a:visited{color:#9B191A;} */
   
-  /*footer css_동관
+  /*footer css_동관*/
+   @media screen and (max-width: 768px){
+     .slogan{
+       color:#9B191A;
+       text-align:center;
+       
+     }
+   }
+    .slogan{
+       color:#9B191A;
+       text-align:center;
+     }
+
   @media screen and (max-width: 768px){
-     .border_box{
-          text-align:center;
-          color:#9B191A;
-          font-size:10px;
-          
-        }
+    .footer_second{
+      text-align:center;
+      color:white;
+      font-size:4px;
+      background-color: #9B191A;
+      padding-bottom:10px;
+    }
   }
-     .border_box{
-            text-align:center;
-            color:#9B191A;
-            font-size:20px;
-        }
-        
-  드롭다운 했을때 나오는메뉴 css */
-
-footer.footer {
-    color: white;
-    width: 100vw;
-    min-height: 300px;
+   .footer_second{
+    text-align:center;
+    color:white;
+    font-size:20px;
     background-color: #9B191A;
-
+    padding-bottom:10px;
+  }
+  
+  .developer{letter-spacing:10px;
+    color:#9B191A;
+    font-size:15px;
+    text-align:center;
+  }
+   @media screen and (max-width: 768px){
+  .developers{
+    text-align:center;
+    margin:10px;
+    font-size:2px;
+    display:inline-block;
+  }
+   }
+    .developers{
+    text-align:center;
+    margin:10px;
+    font-size:20px;
+  }
+   
+  .slogan{
+    font-size:40px;
+    margin-bottom:30px;
+  }
+  
+  .join {
+    background-color : #9B191A;
+    color:white;
+    font-size:30px;
+    margin: auto;
+    display:block;
+    padding: 10px 120px 10px 120px;
+    border-radius: 10px;
+  }
+  @media screen and (max-width: 768px){
+   .join {
+      background-color : #9B191A;
+      color:white;
+      font-size:15px;
+      margin: auto;
+      display:block;
+      padding: 5px 60px 5px 60px;
+    }
+  }
   </style>
   
 </head>
@@ -143,6 +203,8 @@ footer.footer {
     <img class="conainer imgg" src="/assets/lion.png" width="100">Likelion X KHU 경희대학교 축제 알리미~</li><br>
   </ul>
   
+  
+   
     <div class="header">
       <div class="container p-0">
           <div class="front_menu">
@@ -166,7 +228,7 @@ footer.footer {
               <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">26일</button>
             </li>
              <li class="nav-item" onclick="location.href='/festival/info'">
-               <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">Informations</button>
+               <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">Info</button>
             </li>
           </ul>
         </div>
@@ -180,51 +242,43 @@ footer.footer {
     </div>
 
 
-<footer class="footer">
-      <div class="container flex">
-
-        <div class="flex-70">
-          <div class="slogan">
-            내 손으로 만드는 내 아이디어!<br>
-            당신의 아이디어를 구현하세요
-          </div>
+    <footer class="footer">
+      <div class="footer_first">
+        <div class="slogan">
+              LikeLion at KyungHee Global
+        </div>
+            
+        <button type="button" class="join"><a href="https://www.facebook.com/kyungheelion/?fref=ts">   Come to join us   </button></a>
+        
           <br>
-          <address> 경기도 용인시 기흥구 덕영대로 1732 <br>
-          COPYRIGHT 2017. LIKELION AT KYUNGHEE GLOBAL ALL RIGHT RESERVED. </address>
-          
-          <br>
-          <div class="contact">
-            <div class="item">
-              <i class="fa fa-facebook-official"></i> <a href="http://fb.me/aulikelion">@aulikelion</a>
-            </div>
-            <div class="item">
-               <i class="fa fa-commenting"></i> <a href="http://m.me/aulikelion">@aulikelion</a>
-            </div>
-            <div class="item">
-               <i class="fa fa-envelope"></i> <a href="mailto:ajou@likelion.org">ajou@likelion.org</a>
-            </div>
-            <div class="item">
-               카카오톡 <a href="http://plus.kakao.com/home/@aulikelion">@aulikelion</a>
-            </div>
-          </div>
-          <div>
+        <div class="developer">
+          <strong>.ABOUT&nbspDEVELOPER</strong>
+        </div>
+        <div class="developers">
             <ul>
                 <li>
-                    <a href="https://www.instagram.com/dongkwanyou/" style="color: #9B191A; !important">|&nbsp유동관&nbsp|</a> 
-                    <a href="https://www.facebook.com/jaekyeong.ryu" style="color: #9B191A; !important">유재경&nbsp|</a> 
-                    <a href="https://www.facebook.com/castle.in.5" style="color: #9B191A; !important">류성한&nbsp|</a> 
-                    <a href="https://www.facebook.com/profile.php?id=100003031083147" style="color: #9B191A; !important">정준현&nbsp|</a> 
-                    <a href="https://www.facebook.com/profile.php?id=100004224368058" style="color: #9B191A; !important">김문석&nbsp|</a> 
+                    <a href="https://www.instagram.com/dongkwanyou/" style="color:#9B191A; text-decoration:none; !important ">|&nbsp유동관&nbsp|</a> 
+                    <a href="https://www.facebook.com/jaekyeong.ryu" style="color:#9B191A; text-decoration:none; !important">유재경&nbsp|</a> 
+                    <a href="https://www.facebook.com/castle.in.5" style="color:#9B191A; text-decoration:none; !important">류성한&nbsp|</a> 
+                    <a href="https://www.facebook.com/profile.php?id=100003031083147" style="color:#9B191A; text-decoration:none; !important">정준현&nbsp|</a> 
+                    <a href="https://www.facebook.com/profile.php?id=100004224368058" style="color:#9B191A; text-decoration:none; !important">김문석&nbsp|</a> 
                 </li>
             </ul>
-          </div>
         </div>
+        
       </div>
-  </footer>
-    
+            
+      <div class="footer_second">
+       <address><br>경희대학교 국제캠퍼스 경기도 용인시 기흥구 덕영대로 1732<br>
+       COPYRIGHT 2017. LIKELION AT KYUNGHEE GLOBAL ALL RIGHT RESERVED. <br> </address>
+      </div>
+    </footer>
+
+<!--
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
+
 </body>
 </html>
 
@@ -251,5 +305,4 @@ footer.footer {
     <p style="letter-spacing:10px; font-size:30px; position:left; display : inline-block;">경희대학교 국제캠퍼스|</p>
     <p>경기도 용인시 기흥구 덕영대로 1732</p>
     <p>COPYRIGHT 2017. LIKELION AT KYUNGHEE GLOBAL ALL RIGHT RESERVED.</p>
-                  
  </footer>-->

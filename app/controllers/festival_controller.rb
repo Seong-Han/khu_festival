@@ -23,11 +23,13 @@ class FestivalController < ApplicationController
     end
     
     def index
-    @numofClubs=Club.count(:id) # 현재까지 등록된 주점 개수
-    @numofBarmenus=Barmenu.count(:id)# 현재까지 등록된 메뉴 개수
+    
+    # @numofBarmenus=Barmenu.count(:id)# 현재까지 등록된 메뉴 개수
     
     today_time=Time.new # 현재 시간 담고있는 table
     today_day=today_time.day
+    
+    @numofTodayClubs=Club.where(:day => today_day).count() # 오늘의 주점들
     
     @todayEngClub=Club.where(:day => today_day,:univ_id => 1)# 오늘의 공대 주점
     @todayForeignClub=Club.where(:day => today_day,:univ_id => 2) # 오늘의 외대 주점 

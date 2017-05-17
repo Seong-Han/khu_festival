@@ -1,3 +1,9 @@
+  <style>
+
+  .btn {
+      background-color:#9B191A; }
+  
+</style>
  <script>
      
        	function btn_is_alert(){
@@ -56,8 +62,10 @@
    <input type="hidden" value="<%=params[:univ_id]%>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="univ_id"> <!-- 대학 id 설정-->
    <input type="hidden" value="<%=params[:club_id]%>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="club_id"> <!-- 동아리 id 설정-->
    
+    <button type="submit" class="btn" style="color:white">메뉴 추가</button>
+    <button type="submit" class="btn"name="btn_js_confirm" id="btn_js_confirm" onclick="btn_is_alert();"   style="color:white">제출</button> 
    
-  <button type="submit" class="btn btn-primary">메뉴 추가</button> 
-    <input type="button" name="btn_js_confirm" id="btn_js_confirm" onclick="btn_is_alert();" value="제출"><br> <!-- 메뉴 추가를 다했다면 완료-->
+    
+    
   </form>
   </div>

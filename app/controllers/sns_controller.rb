@@ -1,7 +1,7 @@
 class SnsController < ApplicationController
   before_action :authenticate_user!
   def main
-    @comments = Comment.all
+    @comments = Comment.all.reverse
   end
 
   def create
