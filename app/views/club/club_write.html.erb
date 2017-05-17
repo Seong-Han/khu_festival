@@ -4,6 +4,9 @@
   margin-left: auto;
   margin-right: auto;
   }
+  .btn {
+      background-color:#9B191A; }
+  
 </style>
 <script>
          	function btn_is_alert(){
@@ -15,21 +18,32 @@
 </script>
 <div class="container">
     <h1>주점내역 작성하기</h1>
-    <br>
     <form class="form-block" action="/club/create" method="POST">
         <div class="conainer form-group">
-          <label class="mr-sm-2" for="inlineFormCustomSelect">주점 날짜를 선택해주세요.</label>
-          <select class="custom-select ml-0" id="inlineFormCustomSelect" name="day" >
+            <label class="mr-sm-2" for="inlineFormCustomSelect">주점 날짜를 선택해주세요.</label><br>
+            <%(22...26).each do |day|%>
+            <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" value="<%=day%>"> <%=day%>일
+            </label>
+            <%end%>
+          
+          <!--<select class="custom-select ml-0" id="inlineFormCustomSelect" name="day" >
             <option value="22">22일</option>
             <option value="23">23일</option>
             <option value="24">24일</option>
             <option value="25">25일</option>
             <option value="26">26일</option>
-          </select>
+          </select>-->
         </div>
-    
         <label class="mr-sm-2" for="inlineFormCustomSelect">소속 단과 대학을 선택해주세요. (소속 대학이 없다면 주점 위치로 선택해주세요.)</label>
-        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="univ_id" style="margin-left:0; !important">
+        <br>
+        <%{"1"=>"공과대학", "2"=>"외국어대학", "3"=>"예술디자인대학", "4"=>"체육대학", "5"=>"국제대학", "6"=>"전자정보대학", "7"=>"생명과학대학", "8"=>"멀티미디어관", "9"=>"학생회관"}.each do |map_key, map_value|%>
+        <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio<%=map_key%>" value="<%=map_key%>"> <%=map_value%>
+        </label>
+        <%end%>
+        
+        <!--<select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="univ_id" style="margin-left:0; !important">
           <option value="1">공과대학</option>
           <option value="2">외국어대학</option>
           <option value="3">예술대학</option>
@@ -39,8 +53,8 @@
           <option value="7">생대</option>
           <option value="8">멀관</option>
           <option value="9">학관</option>
-        </select>
-    
+        </select>-->
+        <br>
       
       <!-- 
       <div class="form-group">
@@ -54,19 +68,19 @@
           <label for="formGroupExampleInput">소속 학과 입력</label>
           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ex)컴퓨터공학과. 중앙동아리는 중앙동아리라고 적어주세요" name="department_name" required>
         </div>
-        <br>
+        
         
       <div class="form-group">
         <label for="formGroupExampleInput">동아리 이름</label>
         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ex)멋쟁이 사자처럼" name="club_name" required>
       </div>
-    <br>
+    
       <div class="form-group">
         <label for="formGroupExampleInput">주점이름</label>
         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ex)흥청망청" name="bar_name" required>
       </div>
-    <br>
-    <br>
+    
+    
     
       <div class="form-group">
         
@@ -74,7 +88,7 @@
          
       </script>
       
-      <% case @univ_id  %>
+      /<% case @univ_id  %>
         <%   when  1 %>
                   <% case @day %>
                         <% when 22 %>
@@ -186,7 +200,8 @@
       </div>
     
       
-      <button type="submit" class="btn btn-primary" onclick="btn_is_alert();">메뉴작성하러가기</button>
+      <button type="submit" class="btn btn-danger mb-5" onclick="btn_is_alert();" >메뉴작성하러가기</button>
+      
       <!-- 예외처리 해야함: 필수 사항(동아리 이름, 주점 이름, 주점 위치) 가 입력이 안되면 메뉴작성이 안되게 해야함-->
       
       

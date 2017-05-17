@@ -5,7 +5,7 @@
     
 <head>
     <style>
-        .copyright{
+        .copyight{
             width:100px;
         }
         ul{ 
@@ -15,6 +15,19 @@
     .talk {
         display:flex;
     }
+    
+    .talk> img {
+    width:10%; 
+    height:10%;
+    }
+      @media sceen and (max-width: 768px) {
+      .talk> img {
+    width:20%; 
+    height:20%;
+      }
+      
+      }
+    
     </style>  
 
 
@@ -22,16 +35,16 @@
     <body>
        <%# 여기 그냥 이미지 넣을 거임 ㅇㅅㅇ 주석!
        <div class="fest_info">
-            <div class="container-fluid bg-1 text-center">
+            <div class="containe-fluid bg-1 text-cente">
                 
-                <h1 style="text-align:center;">경희대학교 & 멋쟁이 사자처럼</h1><br>
-                <h2 sytle="text-align:center;">이 주관하는 경희대학교 축제정보 알림이 서비스입니다~</h2><hr>
-<div class="intro_img_text">
-                <p style="font-size: 15px;"><img src="https://klas.khu.ac.kr/data/portfolio/user/POR_120809131103840c0075/FIL_13041512111051475568.jpg" style="padding: 10px; align: auto; width: 500px; hspace: 5; vspace: 5; float:left;">경희대학굔 
-                역사와 ㅈ통을자랑하는 너무나도 예쁘고 알다운 학교입니다. maintains that the so-called May 24
-        sanctions, which were imposed after Pyongyang’s
-        torpedo attack on the corvette Cheonan in March 2010,
-        can only be terminated with the regime’s apology for it,
+                <h1 style="text-align:cente;">경희대학교 & 멋쟁이 사자처럼</h1><b>
+                <h2 sytle="text-align:cente;">이 주관하는 경희대학교 축제정보 알림이 서비스입니다~</h2><h>
+<div class="into_img_text">
+                <p style="font-size: 15px;"><img src="https://klas.khu.ac.kr/data/potfolio/use/PO_120809131103840c0075/FIL_13041512111051475568.jpg" style="padding: 10px; align: auto; width: 500px; hspace: 5; vspace: 5; float:left;">경희대학굔 
+                역사와 전통을자랑하는 너무나도 예쁘고 알다운 학교입니다. maintains that the so-called May 24
+        sanctions, which wee imposed afte Pyongyang’s
+        topedo attack on the covette Cheonan in Mach 2010,
+        can only be teminated with the gime’s apology for it,
         steps to prevent a recurrence and the punishment of the
 sanctions against North Korea, as the
         public here remains torn over the issue that could
@@ -49,8 +62,8 @@ sanctions against North Korea, as the
             
     %>
         <div class="talk">
-          <img src="/assets/말풍선.png" style="width:10%; height:10%">
-          <a href="/sns/main"> <h1 style="color:black;  padding-top:10px">TalK Khu</h1></a>
+          <img src="/assets/말풍선.png" >
+          <a href="/sns/main"> <h1 style="color:black;  padding-top:20px">TalK Khu</h1></a>
           </div>
     <table class="table table-hover">
       <thead>
@@ -109,13 +122,13 @@ sanctions against North Korea, as the
                 <br>
                 <div class="stat margin">
                     <h3 class="margin-small">
-                        지금까지 총[ <%=@numofClubs%> ]개의 주점이 등록되었습니다.<br><
+                        지금까지 총[ <%=@numofClubs%> ]개의 주점이 등록되었습니다.<br>
                         지금까지 총[ <%=@numofBarmenus%> ]개의 메뉴가 등록되었습니다. <!-- 메뉴 등록되는 결과 확인하려고 적은것입니다. 지우셔도됩니다.-->
                     </h3>
                 
                 <div class="today_link">
                     <div class="container" style="padding: 5px 50px 10px">
-                
+                        
                     </div>
                 </div>
                 

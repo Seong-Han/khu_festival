@@ -1,112 +1,63 @@
-<!--
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
     <style>
+      ul{list-style:none;}
+    a:link{text-decoration:none;color:white;}
+   a:visited{color:white;} 
    
-      .btn-toolbar{
-          padding:1px 5px 5px 1px;
-          margin : -60px 0px 0px 170px;
-          font-size : 100pt;
-      }
-       .line_up_img{
-          position: relative;
-          margin 10px 10px 20px;
-      }
-      .map_img{
-          position: relative;
-          top:20px;
-          left:150px;
-          bottom: 100px;
-      }
-    </style>
-    
-  </head>
-  <body style="overflow-x:hidden">
-     <strong><h1 style="text-align:center; color:white; background-color:#c43b54;">Today's Line-up</h1></strong>
+     .club{
+     	display:flex;
+     	list-style:none;
+     	justify-content:space-around;
+     	background: #9B191A;
+     	margin:0px;
+     	color:white;
+     	font-size:20px;
+     }
   
-    
-      <div id="carouselExampleIndicators" class="carousel slide my-5" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" role="listbox">
-    <div class="carousel-item active">
-      <img class="d-block img-fluid" src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/18275238_766269973546728_3730559585947363643_n.jpg?oh=d73d9ed2ae0cf0a4533f55438844cf7a&oe=59B83A22" alt="First slide" style="width : 600px; height : 700px; position: relative; left: 250px;">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block img-fluid" src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/18403399_767761466730912_2200536950366929019_n.jpg?oh=3e2495cc689e691b8cba0f916b6e7f5c&oe=59BD603D" alt="Second slide" style="width : 600px; height : 700px; position: relative; left: 250px;">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block img-fluid" src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/18485589_769016123272113_6633971204380668627_n.jpg?oh=b7864d2f3d9f75e31eba2c472995eb0e&oe=597C012F" alt="Third slide" style="width : 600px; height : 700px; position: relative; left: 250px;">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-     
-              
-     <h1 style="text-align:center; color:white; background-color:#c43b54; size=100px">CLUB'S INFO</h1>
-     <div class="map_img">
-            <img class="img_map" src="/assets/전체지도2.jpg" width=800px height=500px>
-     </div>
-       <br>
-        <br>
-      <br>
-       <br>
-      <br>
-       <br>
-      <br>
-            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                <button type="button" class="btn btn-outline-danger">공과대학</button>
-                <button type="button" class="btn btn-outline-danger">외국어대학</button>
-                <button type="button" class="btn btn-outline-danger">생명과학대학</button>
-                <button type="button" class="btn btn-outline-danger">멀티미디어관</button>
-                <button type="button" class="btn btn-outline-danger">생명과학대학</button>
-                <button type="button" class="btn btn-outline-danger">학생회관</button>
-                <button type="button" class="btn btn-outline-danger">예술디자인대학</button>
-                <button type="button" class="btn btn-outline-danger">국제대학</button>
-                <button type="button" class="btn btn-outline-danger">전자정보대학</button>
-            </div>
-        </div>
-  </body>
-</html>
-
--->
-
-
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-   
+      @media screen and (max-width: 768px) {
+      .container>.btn-group-lg>.btn{
+        font-size : 9px;
+        padding: 6px 6px;
+      }
+     .carousel-inner> .carousel-item > img {
+          display: block;
+          margin: 0 auto;
+          height:none;
+          width:80%; height:80%;
+      }
+         .club{
+     	display:flex;
+     	list-style:none;
+     	justify-content:space-between;
+     	background: #9B191A;
+     	margin:0px;
+     	padding:0px;
+     	color:white;
+     	font-size:10px;
+     }
+      }
+      
       .btn-toolbar{
           display:flex;
           justify-content:center;
       }
      
-      <%# @media all and (min-width: 200px) and (max-width: 768px) {
-      .btn btn-outline-danger{
-        font-size:6px;
+     .carousel-item > img {
+          display: block;
+          margin: 0 auto;
+          height:none;
+          width:50%; height:50%;
+          }
       }
-      }  %>
- 
-  
+     
+     
     </style>
     
   </head>
   <body style="overflow-x:hidden">
-    <strong><h1 style="text-align:center; color:white; background-color:#c43b54;">Today's Line-up</h1></strong>
+    <strong><h1 style="text-align:center; color:white; background-color:#9B191A;">Today's Line-up</h1></strong>
     <!-- 슬라이드로 넘겨주기 -->
     <div id="carouselExampleIndicators" class="carousel slide my-5" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -115,25 +66,18 @@
       </ol>
         <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                <div class="container">
-                <img class="d-block img-fluid" src="
-https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/18275238_766269973546728_3730559585947363643_n.jpg?oh=d73d9ed2ae0cf0a4533f55438844cf7a&oe=59B83A22" alt="First slide">
-                </div>
+                  <img class="d-block img-fluid" src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/18275238_766269973546728_3730559585947363643_n.jpg?oh=d73d9ed2ae0cf0a4533f55438844cf7a&oe=59B83A22
+" alt="First slide">
                 </div>
 
                 <div class="carousel-item">
-                  <div class-"container">
-                  <img class="d-block img-fluid" src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/18403399_767761466730912_2200536950366929019_n.jpg?oh=3e2495cc689e691b8cba0f916b6e7f5c&oe=59BD603D" alt="Second slide">
-                  </div>
+                  <img class="d-block img-fluid" src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/18403399_767761466730912_2200536950366929019_n.jpg?oh=3e2495cc689e691b8cba0f916b6e7f5c&oe=59BD603D
+" alt="Second slide">
                 </div>
                 
                 <div class="carousel-item">
-                  <div class-"container">
-                  <img class="d-block img-fluid" src="
-https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/18485589_769016123272113_6633971204380668627_n.jpg?oh=b7864d2f3d9f75e31eba2c472995eb0e&oe=597C012F" alt="Third slide">
-                  </div>
+                  <img class="d-block img-fluid" src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/18485589_769016123272113_6633971204380668627_n.jpg?oh=b7864d2f3d9f75e31eba2c472995eb0e&oe=597C012F" alt="Second slide">
                 </div>
-
                 
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" color="black">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -146,31 +90,27 @@ https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/18485589_769016123272113_663397120
                 </a>
       </div>
     </div>
-    
-              
-    <h1 style="text-align:center; color:white; background-color:#c43b54; size=100px">CLUB'S INFO</h1>
-    
-     <div class="container my-5">
-              <img class="img_map img-fluid" src="/assets/전체지도2.jpg" >
+        
+         
+     <div class="container my-3" style="text-align:center">
+              <img class="img_map img-fluid" src="/assets/전체지도2.jpg" style="width:80%; height:80%">
      </div>
-       <div class="container my-5">
-       
-         <div class="btn-toolbar btn-group-lg" role="toolbar" aria-label="Toolbar with button groups" >
-                  <button type="button" class="btn btn-danger col-xs-2" style="  margin : 2px; "><a href ="/bar/25/1">공과대학</a></button>
-                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/25/2">외국어대학</a></button>
-                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/25/4">체육대학</a></button>
-                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/25/8">멀티미디어관</a></button>
-         </div>
-       
-      
-       
-         <div class="btn-toolbar btn-group-lg mt-2" role="toolbar" aria-label="Toolbar with button groups">
-                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/25/7">생명과학대학</a></button>
-                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/25/9">학생회관</a></button>
-                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/25/3">예술디자인대학</a></button>
-                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/25/5">국제대학</a></button>
-                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/25/6">전자정보대학</a></button>
-          </div>          
-     </div>
+        
+    <div class="container mt-4 mb-3" >
+    	<ul class="club py-2 px-3" >
+          <li><a href ="/bar/25/7">생명과학대학</a></li>
+          <li><a href ="/bar/25/3">예술디자인대학</a></li>
+          <li><a href ="/bar/25/6">전자정보대학</a></li>
+          <li><a href ="/bar/25/8">멀티미디어관</a></li>
+        </ul>
+         
+        <ul class="club pb-2 px-3">
+          <li><a href ="/bar/25/1">공과대학</a></li>
+          <li><a href ="/bar/25/4">체육대학</a></li>
+          <li><a href ="/bar/25/9">학생회관</a></li>
+          <li><a href ="/bar/25/2">외국어대학</a></li>
+          <li><a href ="/bar/25/5">국제대학</a></li>
+        </ul>
+    </div>  
   </body>
 </html>

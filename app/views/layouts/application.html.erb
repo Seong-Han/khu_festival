@@ -24,18 +24,18 @@
     .body{
       box-sizing: inherit;
     }
-    /*hover*/
 button:hover{
   background-color : #9B191A !important;
   border-color:#9B191A !important;
   color: white !important;
   cursor:pointer;
+  
 }
 .a:hover{
   background-color : #9B191A !important;
   border-color:#9B191A !important;
   color: white !important;
-  
+  cursor:pointer;
 }
 .b:hover{
     background-color : white !important;
@@ -51,8 +51,8 @@ button:hover{
 }
 .home-title:hover{
   opacity: 0.3;
-    filter: alpha(opacity=20);
-    cursor:pointer;
+  filter: alpha(opacity=20);
+  cursor:pointer;
 }
     .front_menu{
       background-color : #9B191A;
@@ -78,48 +78,35 @@ button:hover{
   }*/
 
   
-/*링크 클릭 시 노랑색으로 바꿔주는 css*/
+/*링크 클릭 시 노랑색으로 바꿔주는 css
        
     ul{list-style:none;}
-    a:link{text-decoration:none;color:white;}
-  a:visited{color:white;}
+    a:link{text-decoration:none;color:#9B191A;}
+    a:visited{color:#9B191A;} */
   
-  /*footer css*/
-     .footer_class{
+  /*footer css_동관
+  @media screen and (max-width: 768px){
+     .border_box{
+          text-align:center;
+          color:#9B191A;
+          font-size:10px;
+          
+        }
+  }
+     .border_box{
             text-align:center;
-            background-color: #9B191A;
-            color:white;
+            color:#9B191A;
             font-size:20px;
         }
         
-        
-  /* 드롭다운 했을때 나오는메뉴 css */
-    /*로고 css*/
+  드롭다운 했을때 나오는메뉴 css */
 
-  .imgg {
-    
-    
-  }
-  .lion_image{
-      margin-top : 10px;
-      margin-bottom : 10px;
-      
-      width :100px;
-      
-    }
-  .row{
-    
-    width: 50px;
-    height: 50px;
-  }
-  
-  .border_box
-  {
-    text-align : center; 
-    color : white;
-    font-size : 30px; 
-    margin : 30px;
-  }
+footer.footer {
+    color: white;
+    width: 100vw;
+    min-height: 300px;
+    background-color: #9B191A;
+
   </style>
   
 </head>
@@ -132,33 +119,29 @@ button:hover{
     <li class="nav-item" style="width:80px;">
     <%= current_user.name %>
     </li>
-
     <% if current_user.admin %>
       <button class="c btn btn-outline-success" type="button" style="background-color:#9B191A;border-color:#9B191A;">
-        <%= link_to '글쓰기', club_write_path %>
+      <%= link_to '글쓰기', club_write_path %>
       </button>
     <% end %>
-    <button class="c btn btn-outline-success" type="button" style="background-color:#9B191A;border-color:#9B191A;font-color:white;">
-    <%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %>
-    </button>
-    </li>
+      <button class="c btn btn-outline-success" type="button" style="background-color:#9B191A;border-color:#9B191A;font-color:white;">
+      <%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %>
+      </button>
     </div>
-    
+    <div class="login-bar">
     <% else %>
-    <ul class="home-title">
-      <nav class="navbar navbar-ligh bg-faded" style="background-color:white;">
-          <li class="title nav-item" style="text-align:center; color: #9B191A;" onclick="location.href='/festival/index'">
-    <img class="conainer imgg" src="/assets/lion.png" width="80">Likelion X KHU 경희대학교 축제 알리미~
-  </li></ul>
-  <li form class="form-inline">
-    <button class=" btn btn-outline-success" type="button"style="border-color:#9B191A;color:#9B191A;"onclick="location.href='/users/sign_in'">로그인</button>&nbsp;
-    <button class=" btn btn-outline-success" type="button"style="border-color:#9B191A;color:#9B191A;"onclick="location.href='/users/sign_up'">회원가입</button>
-  </form></li>
+  
+    <button class="btn btn-outline-success" type="button"style="border-color:#9B191A;color:#9B191A;"onclick="location.href='/users/sign_in'">로그인</button>&nbsp;
+    <button class="btn btn-outline-success" type="button"style="border-color:#9B191A;color:#9B191A;"onclick="location.href='/users/sign_up'">회원가입</button>
     <% end %>
+    </div>
   </ul>
 </div>
-  
 
+  <ul class="container home-title">
+  <li class="title nav-item" style="text-align:left; color: #9B191A;" onclick="location.href='/festival/index">
+    <img class="conainer imgg" src="/assets/lion.png" width="100">Likelion X KHU 경희대학교 축제 알리미~</li><br>
+  </ul>
   
     <div class="header">
       <div class="container p-0">
@@ -189,17 +172,7 @@ button:hover{
         </div>
          
       </div>
-    <%#
-        <div class="likelion">
-          <div class="row">
-            <div class="col-md-4 offset-md-3">
-              <img class="lion_image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC_%EB%A1%9C%EA%B3%A0.png/554px-%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC_%EB%A1%9C%EA%B3%A0.png"> 
-               
-            </div>
-          </div>
-        </div>
-    </div>
-  %>
+  
   
     <div class="container px-0">
       <h1 style="text-align:center"> <%= flash[:alert] %> </h1>
@@ -207,40 +180,76 @@ button:hover{
     </div>
 
 
-  <div class="write_class">
-  <h1 style="text-align:center; color:#9B191A;">LikeLion at KyungHee Global</h1>
-<div class = "border_box">
-  <span style ="background-color : #9B191A; padding: 10px 120px 10px 120px; margin: 10px;"> &nbsp Come To Join Us! &nbsp</span>
-</div>
+<footer class="footer">
+      <div class="container flex">
 
-<p style="color:#9B191A; text-align:center; letter-spacing:10px;">.A DEVELOPER</p><br>
-    <ul>
-                            <li>|
-                                <a href="https://www.instagram.com/dongkwanyou/">유동관</a> |
-                                <a href="https://www.facebook.com/jaekyeong.ryu">유재경</a> |
-                                <a href="https://www.facebook.com/castle.in.5">류성한</a> |
-                                <a href="https://www.facebook.com/profile.php?id=100003031083147">정준현</a> |
-                                <a href="https://www.facebook.com/profile.php?id=100004224368058">김문석</a> |
-                            </li>
-                        </ul>
-<div class="container p-0">
- <footer class="footer_class">
-                <b> 만든사람들 </b><br>
-                    <p>"yes, Likelion & KHU."</p>
-                        <ul>
-                            <li>|
-                                <a href="https://www.instagram.com/dongkwanyou/">유동관</a> |
-                                <a href="https://www.facebook.com/jaekyeong.ryu">유재경</a> |
-                                <a href="https://www.facebook.com/castle.in.5">류성한</a> |
-                                <a href="https://www.facebook.com/profile.php?id=100003031083147">정준현</a> |
-                                <a href="https://www.facebook.com/profile.php?id=100004224368058">김문석</a> |
-                            </li>
-                        </ul>
-            </footer>
-</div>            
+        <div class="flex-70">
+          <div class="slogan">
+            내 손으로 만드는 내 아이디어!<br>
+            당신의 아이디어를 구현하세요
+          </div>
+          <br>
+          <address> 경기도 용인시 기흥구 덕영대로 1732 <br>
+          COPYRIGHT 2017. LIKELION AT KYUNGHEE GLOBAL ALL RIGHT RESERVED. </address>
+          
+          <br>
+          <div class="contact">
+            <div class="item">
+              <i class="fa fa-facebook-official"></i> <a href="http://fb.me/aulikelion">@aulikelion</a>
+            </div>
+            <div class="item">
+               <i class="fa fa-commenting"></i> <a href="http://m.me/aulikelion">@aulikelion</a>
+            </div>
+            <div class="item">
+               <i class="fa fa-envelope"></i> <a href="mailto:ajou@likelion.org">ajou@likelion.org</a>
+            </div>
+            <div class="item">
+               카카오톡 <a href="http://plus.kakao.com/home/@aulikelion">@aulikelion</a>
+            </div>
+          </div>
+          <div>
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com/dongkwanyou/" style="color: #9B191A; !important">|&nbsp유동관&nbsp|</a> 
+                    <a href="https://www.facebook.com/jaekyeong.ryu" style="color: #9B191A; !important">유재경&nbsp|</a> 
+                    <a href="https://www.facebook.com/castle.in.5" style="color: #9B191A; !important">류성한&nbsp|</a> 
+                    <a href="https://www.facebook.com/profile.php?id=100003031083147" style="color: #9B191A; !important">정준현&nbsp|</a> 
+                    <a href="https://www.facebook.com/profile.php?id=100004224368058" style="color: #9B191A; !important">김문석&nbsp|</a> 
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </footer>
     
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
+<!--<footer class="footer_class">
+      <strong><h1>LikeLion at KyungHee Global</h1></strong>
+    <div class = "border_box">
+      <span style="background-color: #9B191A; color:white; !important">Come To Join Us!</span>
+    </div>
+    
+    <p style="color:#9B191A; text-align:center; letter-spacing:10px; font-size: 1.5em;">.A DEVELOPER</p>
+    <ul>
+        <li>
+            <a href="https://www.instagram.com/dongkwanyou/" style="color: #9B191A; !important">|&nbsp유동관&nbsp|</a> 
+            <a href="https://www.facebook.com/jaekyeong.ryu" style="color: #9B191A; !important">유재경&nbsp|</a> 
+            <a href="https://www.facebook.com/castle.in.5" style="color: #9B191A; !important">류성한&nbsp|</a> 
+            <a href="https://www.facebook.com/profile.php?id=100003031083147" style="color: #9B191A; !important">정준현&nbsp|</a> 
+            <a href="https://www.facebook.com/profile.php?id=100004224368058" style="color: #9B191A; !important">김문석&nbsp|</a> 
+        </li>
+    </ul>
+        
+    <p style="letter-spacing:10px; font-size:30px; position:left; display : inline-block;">경희대학교 국제캠퍼스|</p>
+    <p>경기도 용인시 기흥구 덕영대로 1732</p>
+    <p>COPYRIGHT 2017. LIKELION AT KYUNGHEE GLOBAL ALL RIGHT RESERVED.</p>
+                  
+ </footer>-->
