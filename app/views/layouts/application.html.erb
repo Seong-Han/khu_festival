@@ -6,303 +6,84 @@
   <meta name="viewport" content="width=device-width,  initial-scale=1.0"> 
   <!-- 부트스트랩 4 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
+  <link href="/app/stylesheets/application.css" rel="stylesheet">
 
   <title>Khu-festival</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <style>
-
-  ul{list-style:none;}
-    a:link{text-decoration:none;color:white;}
-   a:visited{color:white;} 
-    /*home메뉴*/
-    .btn {
-      font-size:1.5rem;
-    }
-    @media screen and (max-width: 768px){
-    .btn{
-       font-size:1rem;
-       padding:8px 4px;
-    }
-      
-    }
-    .body{
-      box-sizing: inherit;
-    }
-button:hover{
-  background-color : #9B191A !important;
-  border-color:#9B191A !important;
-  color: white !important;
-  cursor:pointer;
-  
-}
-.a{text-decoration:none;}
-.a:hover{
-  background-color : #9B191A !important;
-  border-color:#9B191A !important;
-  color: white !important;
-  cursor:pointer;
-  text-decoration:none;
-}
-.b:hover{
-    background-color : white !important;
-  border-color:#9B191A !important;
-  color: #9B191A !important;
-  cursor:pointer;
-}
-.c:hover{
-  background-color : white !important;
-  border-color:#9B191A !important;
-  color: #9B191A !important;
-  cursor:pointer;
-}
-.home-title:hover{
-  opacity: 0.3;
-  filter: alpha(opacity=20);
-  cursor:pointer;
-  
-}
-    .front_menu{
-      background-color : #9B191A;
-    }
-  .nav-link{
-    color: white;
-    font-size:15px;
-  }
-  .nav-header {
-      height: 50px;
-      background: #eeeeee;
-      padding-top: 14px;
-      font-size: 13px
-      
-      }
-      
-    /*메뉴 css*/
-  /*.menu, .nav-submenu{
-      background-color: #9B191A;
-      text-align: center;
-      font-size:18px;
-      color: white;
-  }*/
-
-  
-/*링크 클릭 시 노랑색으로 바꿔주는 css
-       
-    ul{list-style:none;}
-    a:link{text-decoration:none;color:#9B191A;}
-    a:visited{color:#9B191A;} */
-  
-  /*footer css_동관*/
-   @media screen and (max-width: 768px){
-     .slogan{
-       color:#9B191A;
-       text-align:center;
-       
-     }
-   }
-    .slogan{
-       color:#9B191A;
-       text-align:center;
-     }
-
-  @media screen and (max-width: 768px){
-    .footer_second{
-      text-align:center;
-      color:white;
-      font-size:4px;
-      background-color: #9B191A;
-      padding-bottom:10px;
-    }
-  }
-   .footer_second{
-    text-align:center;
-    color:white;
-    font-size:20px;
-    background-color: #9B191A;
-    padding-bottom:10px;
-  }
-  
-  .developer{letter-spacing:10px;
-    color:#9B191A;
-    font-size:15px;
-    text-align:center;
-  }
-   @media screen and (max-width: 768px){
-  .developers{
-    text-align:center;
-    margin:10px;
-    font-size:2px;
-    display:inline-block;
-  }
-   }
-    .developers{
-    text-align:center;
-    margin:10px;
-    font-size:20px;
-  }
-   
-  .slogan{
-    font-size:40px;
-    margin-bottom:30px;
-  }
-  
-  .join {
-    background-color : #9B191A;
-    color:white;
-    font-size:30px;
-    margin: auto;
-    display:block;
-    padding: 10px 120px 10px 120px;
-    border-radius: 10px;
-  }
-  @media screen and (max-width: 768px){
-   .join {
-      background-color : #9B191A;
-      color:white;
-      font-size:15px;
-      margin: auto;
-      display:block;
-      padding: 5px 60px 5px 60px;
-    }
-  }
-  </style>
-  
+ 
 </head>
 <body style="overflow-x:hidden">
   
-<div class="first">
-  <ul class="nav justify-content-end">
-
+<div class="container px-0">
+  <ul class="nav justify-content-ende">
     <% if user_signed_in? %>
-    <li class="nav-item" style="width:80px;">
-    <%= current_user.name %>
+          <li><img class="imgg col-xs-8 col-md-8 px-1" style="" src="/assets/reallion.png" width="400"></li>
+          <li class="sign-in col-xs-1 col-md-1" onclick="location.href='/users/sign_in'">
+          <%= current_user.name %>
+          </li>
+          
+          <% if current_user.admin %>
+          <li class="navbar-right col-xs-1 col-md-1" onclick="location.href='/club/write'">글쓰기</li>
+          <% end %>
+          <li class="navbar-right  col-xs-1 col-md-1" id="logout" ><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %>
+          </li>
+          
+      <% else %>
+      <li><img class="imgg col-xs-8 col-md-8 px-1" style="" src="/assets/reallion.png" width="400"></li>
+      <li class="sign-in col-xs-1 col-md-1" onclick="location.href='/users/sign_in'">로그인</li>
+      <li class="navbar-right col-xs-1 col-md-1" onclick="location.href='/users/sign_up'">회원가입</li>
+      </ul>
+    <% end %>
+</div>
+<div class="front_menu">
+  <ul class="nav nav-pills nav-justified">
+    <li class="nav-item" onclick="location.href='/festival/index'">
+      <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">HOME</button>
     </li>
-    <% if current_user.admin %>
-      <button class="c btn btn-outline-success" type="button" style="background-color:#9B191A;border-color:#9B191A;">
-      <%= link_to '글쓰기', club_write_path %>
-      </button>
-    <% end %>
-      <button class="c btn btn-outline-success" type="button" style="background-color:#9B191A;border-color:#9B191A;font-color:white;">
-      <%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %>
-      </button>
-    </div>
-    <div class="login-bar">
-    <% else %>
-  
-    <button class="btn btn-outline-success" type="button"style="border-color:#9B191A;color:#9B191A;"onclick="location.href='/users/sign_in'">로그인</button>&nbsp;
-    <button class="btn btn-outline-success" type="button"style="border-color:#9B191A;color:#9B191A;"onclick="location.href='/users/sign_up'">회원가입</button>
-    <% end %>
-    </div>
+    <li class="nav-item" onclick="location.href='/festival/day22'">
+      <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">22일</button>
+    </li>
+    <li class="nav-item" onclick="location.href='/festival/day23'">
+      <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">23일</button>
+    </li>
+    <li class="nav-item" onclick="location.href='/festival/day24'">
+      <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">24일</button>
+    </li>
+    <li class="nav-item" onclick="location.href='/festival/day25'">
+      <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">25일</button>
+    </li>
+    <li class="nav-item" onclick="location.href='/festival/day26'">
+      <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">26일</button>
+    </li>
+     <li class="nav-item" onclick="location.href='/festival/info'">
+       <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">Info</button>
+    </li>
   </ul>
 </div>
 
-  <ul class="container home-title">
-  <li class="title nav-item" style="text-align:left; color: #9B191A;" onclick="location.href='/festival/index">
-    <img class="conainer imgg" src="/assets/lion.png" width="100">Likelion X KHU 경희대학교 축제 알리미~</li><br>
-  </ul>
+<div class="container px-0">
+  <h1 style="text-align:center"> <%= flash[:alert] %> </h1>
+  <%= yield %>
+</div>
+<div class="container footer_first">
+<img class="footer_first" src="/assets/logo.png" onclick="location.href='https://www.facebook.com/kyungheelion/?fref=ts'">
+</div>
+</div>
+ <footer class="footer">
+    <div class="footer_second">
+    <address><br>경희대학교 국제캠퍼스 경기도 용인시 기흥구 덕영대로 1732<br>
+    COPYRIGHT 2017. LIKELION AT KYUNGHEE GLOBAL ALL RIGHT RESERVED. <br> </address>
+    </div>  
+  </footer>
+</body>
   
+ 
   
-   
-    <div class="header">
-      <div class="container p-0">
-          <div class="front_menu">
-            <ul class="nav nav-pills nav-justified">
-            <li class="nav-item" onclick="location.href='/festival/index'">
-              <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">HOME</button>
-            </li>
-            <li class="nav-item" onclick="location.href='/festival/day22'">
-              <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">22일</button>
-            </li>
-            <li class="nav-item" onclick="location.href='/festival/day23'">
-              <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">23일</button>
-            </li>
-            <li class="nav-item" onclick="location.href='/festival/day24'">
-              <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">24일</button>
-            </li>
-            <li class="nav-item" onclick="location.href='/festival/day25'">
-              <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">25일</button>
-            </li>
-            <li class="nav-item" onclick="location.href='/festival/day26'">
-              <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">26일</button>
-            </li>
-             <li class="nav-item" onclick="location.href='/festival/info'">
-               <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">Info</button>
-            </li>
-          </ul>
-        </div>
-         
-      </div>
-  
-  
-    <div class="container px-0">
-      <h1 style="text-align:center"> <%= flash[:alert] %> </h1>
-      <%= yield %>
-    </div>
 
-
-    <footer class="footer">
-      <div class="footer_first">
-        <div class="slogan">
-              LikeLion at KyungHee Global
-        </div>
-            
-        <button type="button" class="join"><a href="https://www.facebook.com/kyungheelion/?fref=ts">   Come to join us   </button></a>
-        
-          <br>
-        <div class="developer">
-          <strong>.ABOUT&nbspDEVELOPER</strong>
-        </div>
-        <div class="developers">
-            <ul>
-                <li>
-                    <a href="https://www.instagram.com/dongkwanyou/" style="color:#9B191A; text-decoration:none; !important ">|&nbsp유동관&nbsp|</a> 
-                    <a href="https://www.facebook.com/jaekyeong.ryu" style="color:#9B191A; text-decoration:none; !important">유재경&nbsp|</a> 
-                    <a href="https://www.facebook.com/castle.in.5" style="color:#9B191A; text-decoration:none; !important">류성한&nbsp|</a> 
-                    <a href="https://www.facebook.com/profile.php?id=100003031083147" style="color:#9B191A; text-decoration:none; !important">정준현&nbsp|</a> 
-                    <a href="https://www.facebook.com/profile.php?id=100004224368058" style="color:#9B191A; text-decoration:none; !important">김문석&nbsp|</a> 
-                </li>
-            </ul>
-        </div>
-        
-      </div>
-            
-      <div class="footer_second">
-       <address><br>경희대학교 국제캠퍼스 경기도 용인시 기흥구 덕영대로 1732<br>
-       COPYRIGHT 2017. LIKELION AT KYUNGHEE GLOBAL ALL RIGHT RESERVED. <br> </address>
-      </div>
-    </footer>
-
-<!--
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-</body>
 </html>
-
-
-
-
-<!--<footer class="footer_class">
-      <strong><h1>LikeLion at KyungHee Global</h1></strong>
-    <div class = "border_box">
-      <span style="background-color: #9B191A; color:white; !important">Come To Join Us!</span>
-    </div>
-    
-    <p style="color:#9B191A; text-align:center; letter-spacing:10px; font-size: 1.5em;">.A DEVELOPER</p>
-    <ul>
-        <li>
-            <a href="https://www.instagram.com/dongkwanyou/" style="color: #9B191A; !important">|&nbsp유동관&nbsp|</a> 
-            <a href="https://www.facebook.com/jaekyeong.ryu" style="color: #9B191A; !important">유재경&nbsp|</a> 
-            <a href="https://www.facebook.com/castle.in.5" style="color: #9B191A; !important">류성한&nbsp|</a> 
-            <a href="https://www.facebook.com/profile.php?id=100003031083147" style="color: #9B191A; !important">정준현&nbsp|</a> 
-            <a href="https://www.facebook.com/profile.php?id=100004224368058" style="color: #9B191A; !important">김문석&nbsp|</a> 
-        </li>
-    </ul>
-        
-    <p style="letter-spacing:10px; font-size:30px; position:left; display : inline-block;">경희대학교 국제캠퍼스|</p>
-    <p>경기도 용인시 기흥구 덕영대로 1732</p>
-    <p>COPYRIGHT 2017. LIKELION AT KYUNGHEE GLOBAL ALL RIGHT RESERVED.</p>
- </footer>-->

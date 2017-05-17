@@ -1,5 +1,27 @@
 
+<head>
+<meta charset="utf-8">
+    <!-- 뷰포트 메타태그! -->
+  <meta name="viewport" content="width=device-width,  initial-scale=1.0"> 
+  <!-- 부트스트랩 4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
+<style>
+ 
+ .c:hover{
+  background-color : white !important;
+  border-color:#9B191A !important;
+  color: #9B191A !important;
+  cursor:pointer;
+}
+.d{
+ font-size:12px!important;
+ color: #9B191A !important;
+ border-color:#9B191A !important;
+ background-color:white;
+}
+</style>
+</head>
 <div class="container mt-5" >
   <h1>경희인들의 소통의 장</h1>
   <form action="/sns/create" method="post">
@@ -14,10 +36,10 @@
    <li>
         <span><%= x.user.name %></span>
         <span><%= x.created_at %></span>
-        <p><%= x.comment %></p>
-         <% if x.user.id == current_user.id %>
-           <a href= "/sns/destroy/<%=x.id%>">삭제</a>
-         <% end %>
+        <p><%= x.comment %><% if x.user.id == current_user.id %>
+           <button class="d btn btn-default" onclick="location.href='/sns/destroy/<%=x.id%>'">삭제</a>
+         <% end %></p>
+         
    </li>
   </ul>
   <% end %>

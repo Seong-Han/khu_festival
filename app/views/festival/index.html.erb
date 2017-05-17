@@ -1,94 +1,44 @@
-<!DOCTYPE html>
-<html>
-    
-    
-    
 <head>
     <style>
+    
+      ul{list-style:none;}
+    a:link{text-decoration:none;color:#9B191A;}
+   a:visited{color:#9B191A;} 
+    
         .copyight{
             width:100px;
         }
         ul{ 
         list-style:none;
         }
-    
-    .talk {
-        display:flex;
-    }
-    
-    .talk> img {
-    width:10%; 
-    height:10%;
-    }
-      @media sceen and (max-width: 768px) {
-      .talk> img {
-    width:20%; 
-    height:20%;
-      }
-      
-      }
-    
+  .c:hover{
+  background-color : #9B191A !important;
+  border-color:#9B191A !important;
+  color:white!important;
+  cursor:pointer;
+}
     </style>  
-
-
 </head>
     <body>
-            <a href="/sns/main"><img src="/assets/talk.png" style="width:40%; height:40%" ></a>
-    <table class="table table-hover">
-      <thead>
-            <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-      <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-      </tbody>
-    </table>
+            <a href="/sns/main"><img src="/assets/talk.png" style="width:32%; height:32%" ></a>
+            <div class="container mt-4 mb-2" style="border:1px solid #9B191A">
+              <p>경희대 축제 실시간 소통 게시판입니다.
+              <%=@starinfo%></p>
+            </div>
+            <div class="conatiner">
+                <button class="c btn btn-outline-success" type="button" style="border-color:#9B191A;color:#9B191A; font-size:1rem" onclick="location.href='/sns/main'">댓글쓰기
+                </button>
+            </div>
+           
+       
+
+      <img class="map" src="/assets/지도.png" style="width:50%; height:50%">       
+      <img class="img_map img-fluid" src="/assets/전체지도2.jpg" style="width:100%; height:80%; text-align:center">
     
-           
-           
-     <div class="container my-3" style="text-align:center">
-        <img class="img_map img-fluid" src="/assets/전체지도2.jpg" style="width:80%; height:80%">
-     </div>
-    
-    <hr>
-           
-           <h1 style="text-align">전체 라인업 이미지 나타내기~~</h1>
-    <div class="container my-3" style="text-align:center">
-        <img class="img_map img-fluid" src="/assets/전체지도2.jpg" style="width:80%; height:80%">
-    </div>
-           
-           <hr>
-           
-         
-                                <h1 style="text-align">주점 정보를 보여주기~~</h1>
-                <p class="margin">
-                    <span class="main-title">경희대학교 국제캠퍼스 축제 주점 정보</span>
-                    <br>
-                </p>
+
+                <img class="map" src="/assets/주점.png" style="width:50%; height:50%">       
                 <h3 class="#">2017.05.22 ~ 2017.05.26</h3>
-                <br>
-                <br>
-                <br>
+             
                 <div class="stat margin">
                     <h3 class="margin-small">
                         오늘 <%=@numofTodayClubs%> 개의 주점이 열렸습니다.<br>
@@ -101,23 +51,89 @@
                               <div class="col-sm-6">
                                 <div class="card">
                                   <div class="card-block">
-                                    <h3 class="card-title">Special title treatment</h3>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                   <h3  class="card-title"> <a href="/bar/<%=@today_day%>/1">공대 <%=@numoftodayEngClub%>건</a></h3>
+                                    
+                                    
                                   </div>
                                 </div>
                               </div>
                               <div class="col-sm-6">
                                 <div class="card">
                                   <div class="card-block">
-                                    <h3 class="card-title">Special title treatment</h3>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/2">외대 <%=@numoftodayForeignClub%>건</a></h3>
+                                    
+                                    
                                   </div>
                                 </div>
                               </div>
                         </div>
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="card">
+                                  <div class="card-block">
+                            
+                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/3">예대 <%=@numoftodayAndClub%>건</a></h3>
+                                    
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="card">
+                                  <div class="card-block">
+                                    
+                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/4">체대 <%=@numoftodaySportsClub%>건</a></h3>
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="row">
+                              <div class="col-sm-6">
+                                <div class="card">
+                                  <div class="card-block">
+                                    
+                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/5">국제대 <%=@numoftodayKicClub%>건</a></h3>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="card">
+                                  <div class="card-block">
+                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/6">자대 <%=@numoftodayEniClub%>건</a></h3>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="row">
+                              <div class="col-sm-6">
+                                <div class="card">
+                                  <div class="card-block">
+                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/7">생대 <%=@numoftodayClsClub%>건</a></h3>
+                                  </div>
+                                </div>
+                              </div>
+                                <div class="col-sm-6">
+                                <div class="card">
+                                  <div class="card-block">
+                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/8">멀관 <%=@numoftodayMultimediaClub%>건</a></h3>
+                                  </div>
+                                </div>
+                              </div>
+
+                        </div>
                         
+                        <div class="row">
+                              <div class="col-sm-6">
+                                <div class="card">
+                                  <div class="card-block">
+                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/9">학관 <%=@numoftodayStudentcenterClub%>건</a></h3>
+                                  </div>
+                                </div>
+                              </div>
+
+                        </div>
+
                     </div>
                 </div>
                 

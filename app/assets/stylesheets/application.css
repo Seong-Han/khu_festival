@@ -13,3 +13,196 @@
  *= require_tree .
  *= require_self
  */
+
+  #logout > a:visited {
+    color:#9B191A;
+  }
+     
+  
+  
+
+   
+   
+   
+     
+    /*home메뉴*/
+    .btn {
+      font-size:1.5rem;
+    }
+    @media screen and (max-width: 768px){
+    .btn{
+       font-size:1rem;
+       padding:8px 4px;
+    }
+      
+    }
+    .body{
+      box-sizing: inherit;
+    }
+button:hover{
+  background-color : #9B191A !important;
+  border-color:#9B191A !important;
+  color: white !important;
+  cursor:pointer;
+  
+}
+.a{text-decoration:none;}
+.a:hover{
+  background-color : #9B191A !important;
+  border-color:#9B191A !important;
+  color: white !important;
+  cursor:pointer;
+  text-decoration:none;
+}
+.b:hover{
+    background-color : white !important;
+  border-color:#9B191A !important;
+  color: #9B191A !important;
+  cursor:pointer;
+}
+.c:hover{
+  background-color : white !important;
+  border-color:#9B191A !important;
+  color: #9B191A !important;
+  cursor:pointer;
+}
+.home-title:hover{
+  opacity: 0.3;
+  filter: alpha(opacity=20);
+  cursor:pointer;
+  
+}
+.sign-in:hover{
+    opacity: 0.3;
+  filter: alpha(opacity=20);
+  cursor:pointer;
+  color: white;
+  font-weight:bold;
+}
+.navbar-right:hover{
+    opacity: 0.3;
+  filter: alpha(opacity=20);
+  cursor:pointer;
+  color: black;
+  font-weight:bold;
+}
+.imgg:hover{
+  opacity: 0.3;
+  filter: alpha(opacity=20);
+  cursor:pointer;
+}
+
+.sign-in{
+  color:#9b191a!important;
+  padding-top:30px;
+  font-weight:bold;
+  margin-top:11px;
+}
+.navbar-right{
+  color:#9b191a!important;
+  padding-top:30px;
+  font-weight:bold;
+  margin-top:11px;
+}
+ @media screen and (max-width: 768px) {
+   .sign-in{
+  color:#9b191a!important;
+  padding-top:0px;
+  padding-right:0px;
+  padding-left:8px;
+  
+  
+  font-weight:bold;
+  margin-top:11px;
+  font-size:0.6rem;
+}
+.navbar-right{
+  color:#9b191a!important;
+  padding-top:0px;
+  padding-left:0px;
+  padding-right:0px;
+  font-weight:bold;
+  margin-top:11px;
+  font-size:0.6rem;
+}
+ }
+
+
+.front_menu{
+    background-color : #9B191A;
+}
+.nav-link{
+    color: white;
+    font-size:15px;
+  }
+  
+    /*메뉴 css*/
+  /*.menu, .nav-submenu{
+      background-color: #9B191A;
+      text-align: center;
+      font-size:18px;
+      color: white;
+  }*/
+
+  
+/*링크 클릭 시 노랑색으로 바꿔주는 css
+       
+    ul{list-style:none;}
+    a:link{text-decoration:none;color:#9B191A;}
+    a:visited{color:#9B191A;} */
+  
+  /*footer css_동관*/
+.footer_first{
+  margin:0 auto;
+  margin-top:30px;
+  display:block;
+  width:60%;
+  height:60%;
+  
+}
+@media screen and (max-width: 768px){
+   .footer_first{
+      width:100%;
+      height:100%;
+   }
+     
+   }
+   .footer_second{
+    text-align:center;
+    color:white;
+    font-size:20px;
+    background-color: #9B191A;
+    padding-bottom:7px;
+  }
+   
+  @media screen and (max-width: 768px){
+    .footer_second{
+      text-align:center;
+      color:white;
+      font-size:10px;
+      background-color: #9B191A;
+      padding-bottom:2px;
+      line-height:2.3em;
+    }
+  }
+  .join {
+    background-color : #9B191A;
+    color:white;
+    font-size:30px;
+    margin: auto;
+    display:block;
+    padding: 10px 120px 10px 120px;
+    border-radius: 10px;
+  }
+  @media screen and (max-width: 768px){
+   .join {
+      background-color : #9B191A;
+      color:white;
+      font-size:15px;
+      margin: auto;
+      display:block;
+      padding: 5px 60px 5px 60px;
+    }
+  }
+
+  
