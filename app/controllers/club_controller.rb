@@ -35,8 +35,6 @@ class ClubController < ApplicationController
 
   def club_update # club_edit.html.erb 에서 넘어온 것을 db에 저장해줌
   @registeredClub=Club.find(params[:club_id])
-  @registeredClub.day=params[:day]
-  @registeredClub.univ_id=params[:univ_id]
   @registeredClub.department_name=params[:department_name]
   @registeredClub.club_name=params[:club_name]
   @registeredClub.bar_name=params[:bar_name]
@@ -45,6 +43,7 @@ class ClubController < ApplicationController
   @registeredClub.save
   club_idStr=@registeredClub.id.to_s
   univ_idStr=@registeredClub.univ_id.to_s
+
   url="/menuedit/"+univ_idStr+"/"+club_idStr
   redirect_to url  # 메뉴 수정 페이지로 이동.
   end
@@ -114,7 +113,19 @@ class ClubController < ApplicationController
   
   end
   
-  def menu_update # 주점메뉴 수정한것을 db에 저장
+  def menu_update # menu_edit에서 수정한것을 db에 저장
+  new_menu=Barmenu.new
+  
+  new_menu.menu_name=params[:menu_name]
+  new_menu.menu_price=params[:menu_price]
+  new_menu.univ_id=params[:univ_id]
+  new_menu.club_id=params[:club_id]
+  new_menu.save
+  univ_idStr=new_menu.univ_id.to_s
+  club_idStr=new_menu.club_id.to_s
+  url="/menuedit/"+univ_idStr+"/"+club_idStr
+
+  redirect_to url # 또 다시 추가하러 감.
   
   end 
   

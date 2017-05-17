@@ -23,7 +23,9 @@ Rails.application.routes.draw do
   get '/festival/parking_lot' =>'festival#parking_lot'
   get '/festival/engineering_front' =>'festival#engineering_front'
   get '/festival/sns'
+  
   get '/club/write' => 'club#club_write'
+  
   get '/club/edit/:univ_id/:club_id' => 'club#club_edit'
   post '/club/create' => 'club#club_create'
   post '/club/update/:club_id' => 'club#club_update'
@@ -32,7 +34,7 @@ Rails.application.routes.draw do
   post '/menucreate' => 'club#menu_create'
   get '/menuedit/:univ_id/:club_id' => 'club#menu_edit'
   get '/menudestroy/:univ_id/:club_id/:menu_id' => 'club#menu_destroy'
-  
+  post '/menuupdate' => 'club#menu_update'
   get '/sns/main' => 'sns#main'
   post 'sns/create'
   get '/sns/destroy/:comment_id' => 'sns#destroy'

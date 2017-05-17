@@ -20,12 +20,42 @@
       font-family: 'Jeju Hallasan', cursive;
   } %>
   
-    /*회원가입 css*/
-    
-  .nav-item{
-     background-color : gray;
-   
-     
+    /*home메뉴*/
+    .body{
+      box-sizing: inherit;
+    }
+    /*hover*/
+button:hover{
+  background-color : #9B191A !important;
+  border-color:#9B191A !important;
+  color: white !important;
+  cursor:pointer;
+}
+.a:hover{
+  background-color : #9B191A !important;
+  border-color:#9B191A !important;
+  color: white !important;
+  
+}
+.b:hover{
+    background-color : white !important;
+  border-color:#9B191A !important;
+  color: #9B191A !important;
+  cursor:pointer;
+}
+.c:hover{
+  background-color : white !important;
+  border-color:#9B191A !important;
+  color: #9B191A !important;
+  cursor:pointer;
+}
+.home-title:hover{
+  opacity: 0.3;
+    filter: alpha(opacity=20);
+    cursor:pointer;
+}
+    .front_menu{
+      background-color : #9B191A;
     }
   .nav-link{
     color: white;
@@ -40,51 +70,35 @@
       }
       
     /*메뉴 css*/
-  .menu, .nav-submenu{
-      background-color: #c43b54;
+  /*.menu, .nav-submenu{
+      background-color: #9B191A;
       text-align: center;
       font-size:18px;
       color: white;
-  }
-  .menu{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  }*/
+
   
+/*링크 클릭 시 노랑색으로 바꿔주는 css*/
+       
+    ul{list-style:none;}
+    a:link{text-decoration:none;color:white;}
+  a:visited{color:white;}
+  
+  /*footer css*/
+     .footer_class{
+            text-align:center;
+            background-color: #9B191A;
+            color:white;
+            font-size:20px;
+        }
+        
+        
   /* 드롭다운 했을때 나오는메뉴 css */
-  .menu ul ul{
-    display:none;
-    background-color: #c43b54;
-    font-size:15px;
-    color: white;
-    position: absolute;
-  }
-  
-  .menu ul li:hover ul{
-    display:block;
-    
-  }
-  
-   /* 서브 메뉴 css */
-  @media screen and (max-width:480px) {
-              #menu {
-                width: auto;
-              }
-              #nav-submenu {
-                float: none;
-                width: auto;
-              }
-      }
-  
     /*로고 css*/
-  .nav-logo {
-  background: white;
-  padding-top: 25px;
-  height: 100px;
-  }
-  .likelion {
-      height:100px;
+
+  .imgg {
+    
+    
   }
   .lion_image{
       margin-top : 10px;
@@ -98,53 +112,83 @@
     width: 50px;
     height: 50px;
   }
+  
+  .border_box
+  {
+    text-align : center; 
+    color : white;
+    font-size : 30px; 
+    margin : 30px;
+  }
   </style>
   
 </head>
 <body style="overflow-x:hidden">
   
-    <div class="header">
-        <div class="first">
-          <ul class="nav justify-content-end" >
-             
-            <% if user_signed_in? %>
-            <li class="nav-item" style="width:80px; color:white;  padding:10px 0 10px 15px; font-size:20px; line-height:30px">
-              <%= current_user.name %>
-            </li>
-                <% if current_user.admin %>
-                  <li class="nav-item" style="font-size:20px; padding:10px 7px;  line-height:30px">
-                
-                     <%= link_to '글쓰기', club_write_path %></li>
-                  </li>
-                  <% end %>
-            <li class="nav-item" style="font-size:20px;  padding:10px 7px; line-height:30px;">
-              
-               <%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
-            </li>
-            
-            <% else %>
-            <li class="nav-item" style="width:90px; color:white;  padding:10px 0 10px 15px; font-size:20px">
-              <a class="nav-link" href="/users/sign_in" >로그인</a>
-            </li>
-            <li class="nav-item" style="font-size:20px;  padding:10px 7px;">
-              <a class="nav-link" href="/users/sign_up">회원가입</a>
-            </li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="menu">
-          <ul class="container nav nav-pills">
-            <li role="presentation"><a class="nav-submenu" href="/festival/index">Home</a></li>
-            <li role="presentation"><a class="nav-submenu" href="/festival/day22">22일</a></li>
-            <li role="presentation"><a class="nav-submenu" href="/festival/day23">23일</a></li>
-            <li role="presentation"><a class="nav-submenu" href="/festival/day24">24일</a></li>
-            <li role="presentation"><a class="nav-submenu" href="/festival/day25">25일</a></li>
-            <li role="presentation"><a class="nav-submenu" href="/festival/day26">26일</a></li>
-            <li role="presentation"><a class="nav-submenu" href="/festival/info">informations</a></li>
-          
-          </ul>
-        </div>
+<div class="first">
+  <ul class="nav justify-content-end">
+
+    <% if user_signed_in? %>
+    <li class="nav-item" style="width:80px;">
+    <%= current_user.name %>
+    </li>
+
+    <% if current_user.admin %>
+      <button class="c btn btn-outline-success" type="button" style="background-color:#9B191A;border-color:#9B191A;">
+        <%= link_to '글쓰기', club_write_path %>
+      </button>
+    <% end %>
+    <button class="c btn btn-outline-success" type="button" style="background-color:#9B191A;border-color:#9B191A;font-color:white;">
+    <%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %>
+    </button>
+    </li>
+    </div>
     
+    <% else %>
+    <ul class="home-title">
+      <nav class="navbar navbar-ligh bg-faded" style="background-color:white;">
+          <li class="title nav-item" style="text-align:center; color: #9B191A;" onclick="location.href='/festival/index'">
+    <img class="conainer imgg" src="/assets/lion.png" width="80">Likelion X KHU 경희대학교 축제 알리미~
+  </li></ul>
+  <li form class="form-inline">
+    <button class=" btn btn-outline-success" type="button"style="border-color:#9B191A;color:#9B191A;"onclick="location.href='/users/sign_in'">로그인</button>&nbsp;
+    <button class=" btn btn-outline-success" type="button"style="border-color:#9B191A;color:#9B191A;"onclick="location.href='/users/sign_up'">회원가입</button>
+  </form></li>
+    <% end %>
+  </ul>
+</div>
+  
+
+  
+    <div class="header">
+      <div class="container p-0">
+          <div class="front_menu">
+            <ul class="nav nav-pills nav-justified">
+            <li class="nav-item" onclick="location.href='/festival/index'">
+              <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">HOME</button>
+            </li>
+            <li class="nav-item" onclick="location.href='/festival/day22'">
+              <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">22일</button>
+            </li>
+            <li class="nav-item" onclick="location.href='/festival/day23'">
+              <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">23일</button>
+            </li>
+            <li class="nav-item" onclick="location.href='/festival/day24'">
+              <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">24일</button>
+            </li>
+            <li class="nav-item" onclick="location.href='/festival/day25'">
+              <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">25일</button>
+            </li>
+            <li class="nav-item" onclick="location.href='/festival/day26'">
+              <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">26일</button>
+            </li>
+             <li class="nav-item" onclick="location.href='/festival/info'">
+               <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">Informations</button>
+            </li>
+          </ul>
+        </div>
+         
+      </div>
     <%#
         <div class="likelion">
           <div class="row">
@@ -157,12 +201,44 @@
     </div>
   %>
   
-    <div class="container">
+    <div class="container px-0">
       <h1 style="text-align:center"> <%= flash[:alert] %> </h1>
       <%= yield %>
     </div>
 
+
+  <div class="write_class">
+  <h1 style="text-align:center; color:#9B191A;">LikeLion at KyungHee Global</h1>
+<div class = "border_box">
+  <span style ="background-color : #9B191A; padding: 10px 120px 10px 120px; margin: 10px;"> &nbsp Come To Join Us! &nbsp</span>
 </div>
+
+<p style="color:#9B191A; text-align:center; letter-spacing:10px;">.A DEVELOPER</p><br>
+    <ul>
+                            <li>|
+                                <a href="https://www.instagram.com/dongkwanyou/">유동관</a> |
+                                <a href="https://www.facebook.com/jaekyeong.ryu">유재경</a> |
+                                <a href="https://www.facebook.com/castle.in.5">류성한</a> |
+                                <a href="https://www.facebook.com/profile.php?id=100003031083147">정준현</a> |
+                                <a href="https://www.facebook.com/profile.php?id=100004224368058">김문석</a> |
+                            </li>
+                        </ul>
+<div class="container p-0">
+ <footer class="footer_class">
+                <b> 만든사람들 </b><br>
+                    <p>"yes, Likelion & KHU."</p>
+                        <ul>
+                            <li>|
+                                <a href="https://www.instagram.com/dongkwanyou/">유동관</a> |
+                                <a href="https://www.facebook.com/jaekyeong.ryu">유재경</a> |
+                                <a href="https://www.facebook.com/castle.in.5">류성한</a> |
+                                <a href="https://www.facebook.com/profile.php?id=100003031083147">정준현</a> |
+                                <a href="https://www.facebook.com/profile.php?id=100004224368058">김문석</a> |
+                            </li>
+                        </ul>
+            </footer>
+</div>            
+    
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>

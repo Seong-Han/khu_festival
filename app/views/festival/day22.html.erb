@@ -2,19 +2,54 @@
 <html>
   <head>
     <style>
-   
+     
+     .club{
+     	display:flex;
+     	list-style:none;
+     	justify-content:space-around;
+     	background: #9B191A;
+     	margin:0px;
+     	color:white;
+     	font-size:20px;
+     }
+  
+      @media screen and (max-width: 768px) {
+      .container>.btn-group-lg>.btn{
+        font-size : 9px;
+        padding: 6px 6px;
+      }
+     .carousel-inner> .carousel-item > img {
+          display: block;
+          margin: 0 auto;
+          height:none;
+          width:80%; height:80%;
+      }
+         .club{
+     	display:flex;
+     	list-style:none;
+     	justify-content:space-between;
+     	background: #9B191A;
+     	margin:0px;
+     	padding:0px;
+     	color:white;
+     	font-size:10px;
+     }
+      }
+      
       .btn-toolbar{
           display:flex;
           justify-content:center;
       }
      
-      <%# @media all and (min-width: 200px) and (max-width: 768px) {
-      .btn btn-outline-danger{
-        font-size:6px;
+     .carousel-item > img {
+          display: block;
+          margin: 0 auto;
+          height:none;
+          width:50%; height:50%;
+          }
       }
-      }  %>
- 
-  
+     
+     
     </style>
     
   </head>
@@ -28,15 +63,11 @@
       </ol>
         <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                <div class="container">
-                <img class="d-block img-fluid" src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/18198181_762612433912482_9056164657770545039_n.jpg?oh=64765944b25b598536f64b3ca83ecd82&oe=59B86AE9" alt="First slide">
-                </div>
+                  <img class="d-block img-fluid" src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/18198181_762612433912482_9056164657770545039_n.jpg?oh=64765944b25b598536f64b3ca83ecd82&oe=59B86AE9" alt="First slide">
                 </div>
 
                 <div class="carousel-item">
-                  <div class-"container">
                   <img class="d-block img-fluid" src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/18301677_763117267195332_7096053715557585038_n.jpg?oh=89137518415c0f35bd6d77b0c7a74011&oe=59AFFAF4" alt="Second slide">
-                  </div>
                 </div>
                 
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" color="black">
@@ -54,27 +85,46 @@
               
     <h1 style="text-align:center; color:white; background-color:#c43b54; size=100px">CLUB'S INFO</h1>
     
-     <div class="container my-5">
-              <img class="img_map img-fluid" src="/assets/전체지도2.jpg" >
+     <div class="container my-3" style="text-align:center">
+              <img class="img_map img-fluid" src="/assets/전체지도2.jpg" style="width:80%; height:80%">
      </div>
-     <div class="container my-5">
-       
+     
+<%#     <div class="container mb-3">
          <div class="btn-toolbar btn-group-lg" role="toolbar" aria-label="Toolbar with button groups" >
-                  <button type="button" class="btn btn-outline-danger "><a href ="/bar/22/1">공과대학</a></button>
-                  <button type="button" class="btn btn-outline-danger "><a href ="/bar/22/2">외국어대학</a></button>
-                  <button type="button" class="btn btn-outline-danger "><a href ="/bar/22/4">체육대학</a></button>
-                  <button type="button" class="btn btn-outline-danger "><a href ="/bar/22/8">멀티미디어관</a></button>
+                  <button type="button" class="btn btn-danger col-xs-2" style="  margin : 2px; "><a href ="/bar/22/1">공과대학</a></button>
+                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/22/2">외국어대학</a></button>
+                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/22/4">체육대학</a></button>
+                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/22/8">멀티미디어관</a></button>
          </div>
        
-         <div class="btn-toolbar btn-group-lg mt-2" role="toolbar" aria-label="Toolbar with button groups">
-                  <button type="button" class="btn btn-outline-danger col-xs-2"><a href ="/bar/22/7">생명과학대학</a></button>
-                  <button type="button" class="btn btn-outline-danger col-xs-2"><a href ="/bar/22/9">학생회관</a></button>
-                  <button type="button" class="btn btn-outline-danger col-xs-2"><a href ="/bar/22/3">예술디자인대학</a></button>
-                  <button type="button" class="btn btn-outline-danger col-xs-2"><a href ="/bar/22/5">국제대학</a></button>
-                  <button type="button" class="btn btn-outline-danger col-xs-2"><a href ="/bar/22/6">전자정보대학</a></button>
-          </div>          
-     </div>
       
-    
+       
+         <div class="btn-toolbar btn-group-lg mt-2" role="toolbar" aria-label="Toolbar with button groups">
+                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/22/7">생명과학대학</a></button>
+                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/22/9">학생회관</a></button>
+                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/22/3">예술디자인대학</a></button>
+                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/22/5">국제대학</a></button>
+                  <button type="button" class="btn btn-danger col-xs-2" style=" margin : 2px ;"><a href ="/bar/22/6">전자정보대학</a></button>
+          </div>          
+     </div>  %>
+          
+        
+    <div class="container mt-4 mb-3" >
+    	<ul class="club py-2 px-3" >
+          <li><a href ="/bar/22/7">생명과학대학</a></li>
+          <li><a href ="/bar/22/3">예술디자인대학</a></li>
+          <li><a href ="/bar/22/6">전자정보대학</a></li>
+          <li><a href ="/bar/22/8">멀티미디어관</a></li>
+        </ul>
+         
+        <ul class="club pb-2 px-3">
+          <li><a href ="/bar/22/1">공과대학</a></li>
+          <li><a href ="/bar/22/4">체육대학</a></li>
+          <li><a href ="/bar/22/9">학생회관</a></li>
+          <li><a href ="/bar/22/2">외국어대학</a></li>
+          <li><a href ="/bar/22/5">국제대학</a></li>
+        </ul>
+    </div>  
+      
   </body>
 </html>

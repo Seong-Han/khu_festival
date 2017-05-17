@@ -3,39 +3,25 @@
     
     
     
-    <head>
-        <style>
-        .fest_info{
-            margin-top: 100px;
-        }
-        
-        .footer_class{
-            text-align:center;
-            background-color: #c43b54;
-            color:white;
-            font-size:20px;
-        }
+<head>
+    <style>
         .copyright{
             width:100px;
         }
         ul{ 
         list-style:none;
         }
-        
-        a:link{text-decoration:none;color:white;}
-        a:visited{color:white;}
-        a:hover{text-decoration:none;color:yellow;}
-        </style>  
-        
-        
-    </head>
+    
+    .talk {
+        display:flex;
+    }
+    </style>  
+
+
+</head>
     <body>
-        
-       
-        
-        
-        
-        <div class="fest_info">
+       <%# 여기 그냥 이미지 넣을 거임 ㅇㅅㅇ 주석!
+       <div class="fest_info">
             <div class="container-fluid bg-1 text-center">
                 
                 <h1 style="text-align:center;">경희대학교 & 멋쟁이 사자처럼</h1><br>
@@ -61,52 +47,58 @@ sanctions against North Korea, as the
            <br><br><br><br><br><br>
            
             
+    %>
+        <div class="talk">
+          <img src="/assets/말풍선.png" style="width:10%; height:10%">
+          <a href="/sns/main"> <h1 style="color:black;  padding-top:10px">TalK Khu</h1></a>
+          </div>
+    <table class="table table-hover">
+      <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+      <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+      </tbody>
+    </table>
     
-          <a href="/sns/main"> <h1 style="color:black">소통 게시판 들어가기</h1></a>
-           <table class="table table-hover">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
            
-           <br><br><br><br><br><br>
-                      <hr>
-           <br><br><br><br><br><br>
-           <h1 style="text-align">학교 지도 표시하기~~~</h1>
-                       <img class="img_map" src="/assets/전체지도2.jpg" width=800px height=500px>
-                               <hr>
-           <br><br><br><br><br><br>
+           
+     <div class="container my-3" style="text-align:center">
+        <img class="img_map img-fluid" src="/assets/전체지도2.jpg" style="width:80%; height:80%">
+     </div>
+    
+    <hr>
+           
            <h1 style="text-align">전체 라인업 이미지 나타내기~~</h1>
-             <img class="img_map" src=" http://sccdn.chosun.com/news/html/2016/04/27/2016042801002298700165871.jpg" width=800px height=500px>
-             <br><br><br><br><br><br>
+    <div class="container my-3" style="text-align:center">
+        <img class="img_map img-fluid" src="/assets/전체지도2.jpg" style="width:80%; height:80%">
+    </div>
+           
            <hr>
-           <br><br><br><br><br><br>
+           
          
-                                <h1 style="text-align">주점 정보를 볻여주기~~</h1>
+                                <h1 style="text-align">주점 정보를 보여주기~~</h1>
                 <p class="margin">
                     <span class="main-title">경희대학교 국제캠퍼스 축제 주점 정보</span>
                     <br>
@@ -117,37 +109,20 @@ sanctions against North Korea, as the
                 <br>
                 <div class="stat margin">
                     <h3 class="margin-small">
-                        지금까지 총[<span class="stat-count highlight"></span>
-                        ]개의 주점이 등록되었습니다.
+                        지금까지 총[ <%=@numofClubs%> ]개의 주점이 등록되었습니다.<br><
+                        지금까지 총[ <%=@numofBarmenus%> ]개의 메뉴가 등록되었습니다. <!-- 메뉴 등록되는 결과 확인하려고 적은것입니다. 지우셔도됩니다.-->
                     </h3>
                 
                 <div class="today_link">
                     <div class="container" style="padding: 5px 50px 10px">
-                <div class ="khu-card col-sm-4 col-xs-6"><img src="http://health.chosun.com/site/data/img_dir/2014/12/10/2014121002520_0.jpg"></div>
-                <div class ="khu-card col-sm-4 col-xs-6"><img src="http://health.chosun.com/site/data/img_dir/2014/12/10/2014121002520_0.jpg"></div>
-                <div class ="khu-card col-sm-4 col-xs-6"><img src="http://health.chosun.com/site/data/img_dir/2014/12/10/2014121002520_0.jpg"></div>
-                <div class ="khu-card col-sm-4 col-xs-6"><img src="http://health.chosun.com/site/data/img_dir/2014/12/10/2014121002520_0.jpg"></div>
-                <div class ="khu-card col-sm-4 col-xs-6"><img src="http://health.chosun.com/site/data/img_dir/2014/12/10/2014121002520_0.jpg"></div>
-                <div class ="khu-card col-sm-4 col-xs-6"><img src="http://health.chosun.com/site/data/img_dir/2014/12/10/2014121002520_0.jpg"></div>
-                     </div>
+                
+                    </div>
                 </div>
                 
                 </div>
            
         </div>
-            <footer class="footer_class">
-                <b> 만든사람들 </b><br>
-                    <p>"yes, Likelion & KHU."</p>
-                        <ul>
-                            <li>|
-                                <a href="https://www.instagram.com/dongkwanyou/">유동관</a> |
-                                <a href="https://www.facebook.com/jaekyeong.ryu">유재경</a> |
-                                <a href="https://www.facebook.com/castle.in.5">류성한</a> |
-                                <a href="https://www.facebook.com/profile.php?id=100003031083147">정준현</a> |
-                                <a href="https://www.facebook.com/profile.php?id=100004224368058">김문석</a> |
-                            </li>
-                        </ul>
-            </footer>
+    
     </body>
     
 </html>
