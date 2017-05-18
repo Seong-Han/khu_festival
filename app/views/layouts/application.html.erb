@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+
   <meta charset="utf-8">
     <!-- 뷰포트 메타태그! -->
   <meta name="viewport" content="width=device-width,  initial-scale=1.0"> 
@@ -12,7 +13,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
- 
+
 </head>
 <body style="overflow-x:hidden">
   
@@ -34,8 +35,8 @@
       
       
       <li class="imggg"><img class="imgg "src="/assets/reallion.png" width="500"></li>
-      <li class="sign-in offset-xl-4 col-xl-2 offset-lg-3 col-lg-2 col-md-1" onclick="location.href='/users/sign_in'">로그인</li>
-      <li class="navbar-right col-xl-3 col-lg-2  col-md-1" onclick="location.href='/users/sign_up'">회원가입</li>
+      <li class="sign-in offset-xl-4 col-xl-1 offset-lg-3 col-lg-2 col-md-1" onclick="location.href='/users/sign_in'">로그인</li>
+      <li class="navbar-right col-xl-2 col-lg-2  col-md-1" onclick="location.href='/users/sign_up'">회원가입</li>
   </ul>
     <% end %>
 </div>
@@ -70,6 +71,7 @@
   <h1 style="text-align:center"> <%= flash[:alert] %> </h1>
   <%= yield %>
 </div>
+
 <div class="container footer_first">
 <img class="footer_first" src="/assets/logo.png" onclick="location.href='https://www.facebook.com/kyungheelion/?fref=ts'">
 </div>

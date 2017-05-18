@@ -4,11 +4,10 @@
   body{
     font-size:20px;
   }
+.log_btn{}
+ 
+ 
 
- 
- 
-	@import url(http://weloveiconfonts.com/api/?family=fontawesome);
-	@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
 	[class*="fontawesome-"]:before {
 	  font-family: 'FontAwesome', sans-serif;
 	}
@@ -23,7 +22,7 @@
 	}
 	.login {
 	  color: #000;
-		font-family: "Varela Round", Arial, Helvetica, sans-serif;
+		
 		font-size: 16px;
 		line-height: 1.5em;
 		margin: 50px auto;

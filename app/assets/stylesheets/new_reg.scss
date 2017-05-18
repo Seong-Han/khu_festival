@@ -1,7 +1,91 @@
-  body{
+.f_f >.f_last {
+	margin-top:0px !important; 
+}
+ 
+ 
+ body{
     font-size:20px;
   }
-  .log {
-    display : flex;
-    justify-content : center;
-  }
+
+	
+	[class*="fontawesome-"]:before {
+	  
+	}
+	
+	.field {
+		border: none;
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: inherit;
+		-webkit-appearance: none;
+	}
+	.login {
+	  color: #000;
+		font-family: "Varela Round", Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		line-height: 1.5em;
+		margin: 50px auto;
+		width: 300px;
+	}
+	
+	.login h2 {
+		background-color: #f95252;
+		-webkit-border-radius: 20px 20px 0 0;
+		-moz-border-radius: 20px 20px 0 0;
+		border-radius: 20px 20px 0 0;
+		color: #fff;
+		font-size: 28px;
+		padding: 20px 26px;
+	}
+	
+	.fontawesome-lock{
+		margin-right: 14px;
+	}
+	
+	.field{
+		background-color: #fff;
+		-webkit-border-radius: 0 0 20px 20px;
+		-moz-border-radius: 0 0 20px 20px;
+		border-radius: 0 0 20px 20px;
+		padding: 20px 26px;
+	}
+	
+	.field{
+		
+		color: #777;
+		margin-bottom: 14px;
+	}
+	
+	.field{
+		margin-bottom: 0;
+	}
+	
+	.field{
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+	}
+	
+	.field{
+		background-color: #eee;
+		color: #777;
+		padding: 4px 10px;
+		width: 270px;
+	} #fff
+	
+	
+	.login >.log_bar{
+		display:flex;
+		
+	}
+	
+	.field > a {
+		font-size: 1rem;
+		color:inherit;
+	}
+	
+	
+	.field > a:visited {
+	  color:inherit;
+	}

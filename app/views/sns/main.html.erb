@@ -1,22 +1,16 @@
-<head>
-<meta charset="utf-8">
-    <!-- 뷰포트 메타태그! -->
-  <meta name="viewport" content="width=device-width,  initial-scale=1.0"> 
-  <!-- 부트스트랩 4 -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 <style>
  
 
 </style>
-</head>
+
 <div class="container mt-5" >
   <h1>경희인들의 소통의 장</h1>
   <form action="/sns/create" method="post">
        <div class="form-group mt-3">
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="100자 이내로 작성해주세요." name="content" maxlength="100" required>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="100자 이내로 작성해주세요/지금 축제 어때요?" name="content" maxlength="100" required>
       </div>
-       <button type="submit" class="btn btn-outline-danger mb-5">댓글 작성</button>
+       <button type="submit" class="btn btn-outline-danger mb-3">댓글 작성</button>
   </form>
   
   <% @comments.each do |x| %>

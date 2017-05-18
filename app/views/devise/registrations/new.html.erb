@@ -3,45 +3,48 @@
 <link href="/app/stylesheets/new_reg.css" rel="stylesheet">
 </head>
   <body>
- <%# <div class="row justify-content-center"> %>
-  <div class="log mt-5">
-   <div class="container"></div>
-   <div class="container" style="text-align:center">
-    <h2>회원가입</h2>
-   
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+     <%# <div class="row justify-content-center"> %>
+      <div class="login">
     
-      <div class="field">
-        <h5>Email</h5><% f.label :email %>
-        <%= f.email_field :email, autofocus: true %>
-      </div>
-      
-       <div class="field">
-        <h5>이름</h5><% f.label :name %>
-        <%= f.text_field :name %>
-      </div>
-    
-      <div class="field">
-        <h5>비밀번호 (<%= @minimum_password_length %>글자 이상!)</h5><% f.label :password %>
-        <% if @minimum_password_length %>
-        <% end %>
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
-    
-      <div class="field">
-        <h5>비밀번호 확인</h5><% f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
-
-      <div class="actions" style="margin-top:12px">
-        <%= f.submit " 등록 " %>
-      </div>
-    <% end %>
-    
-    <%= render "devise/shared/links" %> 
-  
-    </div>
-    <div class="container"></div>
-  </div>  
+         <div class="container" style="text-align:center">
+             <div class="css_new">
+               <h2 style=margin:0px>회원가입</h2>
+             </div>
+                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                    
+                  
+                    <div class="field">
+                      <h5>Email</h5><% f.label :email %>
+                      <%= f.email_field :email, autofocus: true %>
+                    </div>
+                    
+                     <div class="field">
+                      <h5>이름</h5><% f.label :name %>
+                      <%= f.text_field :name %>
+                    </div>
+                  
+                    <div class="field">
+                      <h5>비밀번호 (<%= @minimum_password_length %>글자 이상!)</h5><% f.label :password %>
+                      <% if @minimum_password_length %>
+                      <% end %>
+                      <%= f.password_field :password, autocomplete: "off" %>
+                    </div>
+                  
+                    <div class="field">
+                      <h5>비밀번호 확인</h5><% f.label :password_confirmation %>
+                      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                    </div>
+              
+              
+                  <div class="f_f">
+                    <div class="field f_last" style="margin-top:12px">
+                      <%= f.submit " 등록 " %>
+                    </div>
+                  </div>
+                  <% end %>
+                   <div class="field" style="text-align:center;">
+                    <%= render "devise/shared/links" %> 
+                   </div>
+             
+       </div>
 </body>
