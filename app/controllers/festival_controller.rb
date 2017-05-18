@@ -29,7 +29,7 @@ class FestivalController < ApplicationController
     today_time=Time.new # 현재 시간 담고있는 table
 
     today_day=today_time.in_time_zone("Seoul").day
-    today_day=25
+    
     @today_day=today_day    #  몇일인지 .
     @numofTodayClubs=Club.where(:day => today_day).count() # 오늘의 주점들
     # 연예인 정보 출력 구현위한 코드

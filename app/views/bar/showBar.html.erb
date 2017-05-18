@@ -12,7 +12,7 @@
   
 </style>
     <% if @numofBars == 0 %>
-     <h1 style="text-align: center">등록된 주점이 없습니다.</h1>
+     <h3 style="text-align: center">등록된 주점이 없습니다.</h3>
     <% end %>
     <% @Bars.each do |y| %>
         <div class="card">
@@ -44,10 +44,13 @@
               
             </p>
             <a href="#" class="btn"   style="color:white"><%= y.bar_location %>번 주점</a>
+              <% if user_signed_in? %>
+              <% if current_user.admin %>
             
-            <!-- 수정,삭제 구현 ;이 버튼들은 관리자 계정만 보일 수 있도록 해야합니다-->
             <a href="/club/edit/<%=y.univ_id%>/<%=y.id%>" class="btn"   style="color:white">주점 정보 수정</a>
             <a href="/club/destroy/<%=y.univ_id%>/<%=y.id%>" class="btn"   style="color:white">주점 정보 삭제</a>
+            <% end %>
+            <% end %>
           </div>
         </div>
         <br>

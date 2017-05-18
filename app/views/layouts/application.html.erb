@@ -19,7 +19,7 @@
 <div class="container px-0">
   <ul class="nav justify-content-ende">
     <% if user_signed_in? %>
-          <li><img class="imgg col-xs-8 col-md-8 px-1" style="" src="/assets/reallion.png" width="400"></li>
+          <li class="col-xs-8 col-md-8"><img class="imgg " style="" src="/assets/reallion.png" width="600"></li>
           <li class="sign-in col-xs-1 col-md-1" onclick="location.href='/users/sign_in'">
           <%= current_user.name %>
           </li>
@@ -27,39 +27,42 @@
           <% if current_user.admin %>
           <li class="navbar-right col-xs-1 col-md-1" onclick="location.href='/club/write'">글쓰기</li>
           <% end %>
-          <li class="navbar-right  col-xs-1 col-md-1" id="logout" ><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %>
+          <li class="navbar-right  col-xs-2 col-md-2" id="logout" ><%= link_to '나가기', destroy_user_session_path, method: 'delete' %>
           </li>
           
       <% else %>
-      <li><img class="imgg col-xs-8 col-md-8 px-1" style="" src="/assets/reallion.png" width="400"></li>
-      <li class="sign-in col-xs-1 col-md-1" onclick="location.href='/users/sign_in'">로그인</li>
-      <li class="navbar-right col-xs-1 col-md-1" onclick="location.href='/users/sign_up'">회원가입</li>
-      </ul>
+      
+      
+      <li class="imggg"><img class="imgg "src="/assets/reallion.png" width="500"></li>
+      <li class="sign-in offset-xl-4 col-xl-2 offset-lg-3 col-lg-2 col-md-1" onclick="location.href='/users/sign_in'">로그인</li>
+      <li class="navbar-right col-xl-3 col-lg-2  col-md-1" onclick="location.href='/users/sign_up'">회원가입</li>
+  </ul>
     <% end %>
 </div>
 <div class="front_menu">
   <ul class="nav nav-pills nav-justified">
-    <li class="nav-item" onclick="location.href='/festival/index'">
-      <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">HOME</button>
+    <li class="nav-item offset-xl-3 col-xl-2 col-md-1 mbfirst" onclick="location.href='/festival/index'">
+      <button type="button" class="b btn btn-default mb" style="background-color:#9B191A;color:white;">HOME</button>
     </li>
-    <li class="nav-item" onclick="location.href='/festival/day22'">
-      <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">22일</button>
+    <li class="nav-item col-xl-2 col-md-1" onclick="location.href='/festival/day22'">
+      <button type="button" class="b btn btn-default mb" style="background-color:#9B191A;color:white;">22일</button>
     </li>
-    <li class="nav-item" onclick="location.href='/festival/day23'">
-      <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">23일</button>
+    <li class="nav-item col-xl-2 col-md-1" onclick="location.href='/festival/day23'">
+      <button type="button" class="b btn btn-default mb" style="background-color:#9B191A;color:white;">23일</button>
     </li>
-    <li class="nav-item" onclick="location.href='/festival/day24'">
-      <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">24일</button>
+    <li class="nav-item col-xl-2 col-md-1" onclick="location.href='/festival/day24'">
+      <button type="button" class="b btn btn-default mb" style="background-color:#9B191A;color:white;">24일</button>
     </li>
-    <li class="nav-item" onclick="location.href='/festival/day25'">
-      <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">25일</button>
+    <li class="nav-item col-xl-2 col-md-1" onclick="location.href='/festival/day25'">
+      <button type="button" class="b btn btn-default mb" style="background-color:#9B191A;color:white;">25일</button>
     </li>
-    <li class="nav-item" onclick="location.href='/festival/day26'">
-      <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">26일</button>
+    <li class="nav-item col-xl-2 col-md-1" onclick="location.href='/festival/day26'">
+      <button type="button" class="b btn btn-default mb" style="background-color:#9B191A;color:white;">26일</button>
     </li>
-     <li class="nav-item" onclick="location.href='/festival/info'">
+     <li class="nav-item col-xl-2 col-md-1 mblast" onclick="location.href='/festival/info'">
        <button type="button" class="b btn btn-default" style="background-color:#9B191A;color:white;">Info</button>
     </li>
+    
   </ul>
 </div>
 

@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'kaminari'
+gem 'kaminari-bootstrap'
+gem 'will_paginate', '~> 3.1.0'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

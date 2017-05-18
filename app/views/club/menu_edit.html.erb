@@ -2,16 +2,16 @@
 
   .btn {
       background-color:#9B191A; }
-  
+
 </style>
  <script>
-     
+
        	function btn_is_alert(){
       	  /* alert(문자열) */
       	  alert("메뉴판이 성공적으로 수정되었습니다.");
       	  location.href='/festival/index';
       	}
-      
+
 
 
  </script>
@@ -29,25 +29,26 @@
     </tr>
   </thead>
   <tbody>
-      
-             
+
+
       <% @menus.each do |x| %>
           <tr>
+
               <th scope="row"></th>
               <td><%=x.menu_name%></td>
               <td><%=x.menu_price%></td>
               <td><button type="button" class="btn btn-primary"><a href="/menudestroy/<%=@univ_id%>/<%=@club_id%>/<%=x.id%>">삭제</a></button> </td>
           </tr>
       <% end %>
-      
+
     </tbody>
   </table>
-  
+
 
   <form class="form-block" action="/menuupdate" method="POST">
-  
-<br>  
-  
+
+<br>
+
   <div class="form-group">
     <label for="formGroupExampleInput">메뉴 이름</label>
     <input type="text" class="form-control" id="formGroupExampleInput" name="menu_name" required>
@@ -58,14 +59,14 @@
     <input type="number" class="form-control" id="formGroupExampleInput"  placeholder="ex)2000원이면 2000 입력"name="menu_price" required>
   </div>
 <br>
-   
+
    <input type="hidden" value="<%=params[:univ_id]%>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="univ_id"> <!-- 대학 id 설정-->
    <input type="hidden" value="<%=params[:club_id]%>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="club_id"> <!-- 동아리 id 설정-->
-   
+
     <button type="submit" class="btn" style="color:white">메뉴 추가</button>
-    <button type="submit" class="btn"name="btn_js_confirm" id="btn_js_confirm" onclick="btn_is_alert();"   style="color:white">제출</button> 
-   
-    
-    
+    <button type="submit" class="btn"name="btn_js_confirm" id="btn_js_confirm" onclick="btn_is_alert();"   style="color:white">제출</button>
+
+
+
   </form>
   </div>

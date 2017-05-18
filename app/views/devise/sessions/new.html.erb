@@ -1,24 +1,15 @@
 <head>
-<style>
-  body{
-    font-size:20px;
-  }
-    .log {
-    display : flex;
-    justify-content : center;
-  }
-</style>
+<link href="/app/stylesheets/login.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round">
 </head>
 <body>
-   <div class="log mt-5">
-     <div class="container"></div>
+   <div class="login">
+     
        <div class="container" style="text-align:center">
-        <h2>로그인</h2>
-        
-        
+        <h2 style="margin:0px"><span class="fontawesome-lock"></span>로그인</h2>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="field">
-            <h5>Email</h5><% f.label :email %>
+          <div class="field pt-2">
+            <h5 >E-mail</h5><% f.label :email %>
             <%= f.email_field :email, autofocus: true %>
           </div>
         
@@ -33,16 +24,27 @@
               <% f.label :remember_me %>
             </div>
           <% end -%>
-        
-          <div class="actions">
-            <%= f.submit " 로그인 " %>
+          
+          <div class="log_bar">
+              <div class="field ">
+                <%= f.submit " 로그인 " %>
+              </div>
+            
+              <div class="field" style="text-align:center">
+                <%= render "devise/shared/links" %>
+              </div>
           </div>
+          
         <% end %>
+      </div>  
         
-        <br />
-        <%= render "devise/shared/links" %>
-        </div>
-        <div class="container"></div>
-      </div>
+        
+       
+       
+      
         
         </body>
+        
+        <!doctype html>
+
+

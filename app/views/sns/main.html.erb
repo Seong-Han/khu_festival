@@ -1,4 +1,3 @@
-
 <head>
 <meta charset="utf-8">
     <!-- 뷰포트 메타태그! -->
@@ -8,25 +7,14 @@
 
 <style>
  
- .c:hover{
-  background-color : white !important;
-  border-color:#9B191A !important;
-  color: #9B191A !important;
-  cursor:pointer;
-}
-.d{
- font-size:12px!important;
- color: #9B191A !important;
- border-color:#9B191A !important;
- background-color:white;
-}
+
 </style>
 </head>
 <div class="container mt-5" >
   <h1>경희인들의 소통의 장</h1>
   <form action="/sns/create" method="post">
-       <div class="form-group">
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="EXID 짱짱" name="content" required>
+       <div class="form-group mt-3">
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="100자 이내로 작성해주세요." name="content" maxlength="100" required>
       </div>
        <button type="submit" class="btn btn-outline-danger mb-5">댓글 작성</button>
   </form>
@@ -36,12 +24,15 @@
    <li>
         <span><%= x.user.name %></span>
         <span><%= x.created_at %></span>
-        <p><%= x.comment %><% if x.user.id == current_user.id %>
-           <button class="d btn btn-default" onclick="location.href='/sns/destroy/<%=x.id%>'">삭제</a>
-         <% end %></p>
-         
+         <p><%= x.comment %><% if x.user.id == current_user.id %>
+           
+         </p><button class="d btn btn-default" onclick="location.href='/sns/destroy/<%=x.id%>'">삭제</button><% end %>
    </li>
   </ul>
   <% end %>
 
 </div>
+<div class="container">
+
+</div>
+
