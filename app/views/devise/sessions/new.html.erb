@@ -1,11 +1,11 @@
 <head>
-<link href="/app/stylesheets/login.css" rel="stylesheet">
+<link href="/app/stylesheets/login.scss" rel="stylesheet">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round">
 </head>
 <body>
    <div class="login">
      
-       <div class="container" style="text-align:center">
+       <div class="container d" style="text-align:center">
         <h2 style="margin:0px"><span class="fontawesome-lock"></span>로그인</h2>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field pt-2">

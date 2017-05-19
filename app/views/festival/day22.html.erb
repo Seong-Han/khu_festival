@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+<link href="/app/stylesheets/day22.scss" rel="stylesheet">
     <style>
-     .carousel-control-prev
+  
+.btn-toolbar{
+    display:flex;
+    justify-content:center;
+}
+ 
+     .carousel-item > img {
+          display: block;
+          margin: 0 auto;
+          height:none;
+          width:40%; height:40%;
+          }
+       .carousel-control-prev
     {background-color:#BDBDBD ;
     opacity:0.8;
     width:5%;
@@ -25,47 +38,32 @@
      	color:white;
      	font-size:20px;
      }
-  
-      @media screen and (max-width: 768px) {
-      .container>.btn-group-lg>.btn{
-        font-size : 9px;
-        padding: 6px 6px;
-      }
-     .carousel-inner> .carousel-item > img {
-          display: block;
-          margin: 0 auto;
-          height:none;
-          width:65%; height:80%;
-      }
-    
-         .club{
-     	display:flex;
-     	list-style:none;
-     	justify-content:space-between;
-     	background: #9B191A;
-     	margin:0px;
-     	padding:0px;
-     	color:white;
-     	font-size:10px;
-     }
-      }
-      
-      .btn-toolbar{
-          display:flex;
-          justify-content:center;
-      }
-     
-     .carousel-item > img {
-          display: block;
-          margin: 0 auto;
-          height:none;
-          width:40%; height:40%;
-          }
-      }
-     
+       
+@media screen and (max-width: 768px) {
+  .container>.btn-group-lg>.btn{
+    font-size : 9px;
+    padding: 6px 6px;
+  }
+ .carousel-inner> .carousel-item > img {
+      display: block;
+      margin: 0 auto;
+      height:none;
+      width:65%; height:80%;
+  }
+
+     .club{
+ 	display:flex;
+ 	list-style:none;
+ 	justify-content:space-between;
+ 	background: #9B191A;
+ 	margin:0px;
+ 	padding:0px;
+ 	color:white;
+ 	font-size:10px;
+ }
+}
      
     </style>
-    
   </head>
   <body style="overflow-x:hidden">
     <img class="map mb-3" src="/assets/라인.png" style="width:50%; height:50%">       
@@ -97,7 +95,7 @@
     </div>
     <hr>
               
-    <img class="map" src="/assets/지도.png" style="width:50%; height:50%">
+    <img class="map" src="/assets/hot.png" style="width:50%; height:50%">
     <img class="img_map img-fluid" src="/assets/전체지도2.jpg" style="width:80%; height:70%; text-align:center">
     
     <div class="container mt-4 mb-3" >

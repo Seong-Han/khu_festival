@@ -1,146 +1,130 @@
 <head>
-    <link href="/app/stylesheets/application.css" rel="stylesheet">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css' rel='stylesheet' type='text/css'>
+  <link href="/app/stylesheets/application.css" rel="stylesheet">
     <style>
-
-   @media screen and (max-width: 768px){
-        .line_up{
-            width:90%;
-            height:90%;
-        }
+* { font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
+@media screen and (max-width: 768px){
+    .line_up{
+        width:90%;
+        height:90%;
     }
-    
-    </style>  
+}
+.container>.com{
+   border-color:#9B191A;
+   color:#9B191A;
+   font-size: 1rem;
+   text-align : center;
+}
+.card-title{
+  color:#9B191A;
+}
+</style>  
 
 </head>
     <body>
          
-        <img class="img-fluid jeoung" src="/assets/정문.png" style="width:90%; height:80%; border-radius:5px;">   
-      
+        <img class="img-fluid jeoung" src="/assets/정문.png" style="width:97%; height:80%; border-radius:5px;">   
+      <hr>
             <a href="/sns/main"><img src="/assets/talk.png" style="width:32%; height:32%; margin-top:20px;" class="mx-3" ></a>
             <div class="container mt-3 mb-2 mx-3" style="border:1px solid #9B191A; border-radius:5px;">
               <p>경희대 축제 실시간 소통 게시판입니다.
               <%= @starinfo %> <br><br><br><br><br> </p>
             </div>
             
-            <div class="conatiner mt-2 mx-3">
-                <button class="c btn btn-outline-success" type="button" style="border-color:#9B191A;color:#9B191A; font-size:1rem" onclick="location.href='/sns/main'">댓글쓰기
+                <div class="container" style="text-align:center;">
+                <button class="c btn btn-outline-success com mb-1" type="button"  onclick="location.href='/sns/main'">댓글쓰기
                 </button>
-            </div>
-           
-       <hr>
-
-      <img class="map mx-3" src="/assets/지도.png" style="width:50%; height:50%; border-radius:5px;">       
-      <img class="img_map img-fluid" src="/assets/전체지도2.jpg" style="width:93%; height:70%; text-align:center; border-radius:5px;">
-    
+                </div>
       <hr>
-      
+      <img class="map mx-3" src="/assets/지도.png" style="width:50%; height:50%; border-radius:5px;">       
+      <img class="img_map img-fluid" src="/assets/전체지도2.jpg" style="width:97%; height:70%; text-align:center; border-radius:5px;">
+      <hr>
        <img class="map mx-3" src="/assets/라인.png" style="width:50%; height:50%">   
-       
        <img class="line_up" src="/assets/라인업 전체.png">
-       
        <hr>
-      
-      
-      
-                <img class="map mx-3" src="/assets/주점.png" style="width:50%; height:50%">       
-                
-             
-                  <div class="margin-small mb-3" style="text-align:center">
-                    <h4>
-                        오늘 <%=@numofTodayClubs%> 개의 주점이 열렸습니다.<br>
-                    </h4>
-                  </div>
-                
-                    <div class="container today_link" >
-                    
-                    
-                          
-                              <div class="col-xl-4 mb-5">
-                                <div class="card ind" style="background-image:url(/assets/공대썸네일.png)">
-                                  <div class="card-block" >
-                                    
-                                   <h3  class="card-title"> <a href="/bar/<%=@today_day%>/1"> <%=@numoftodayEngClub%>개 주점 보러 가기</a></h3>
-                                  </div>
-                                </div>
-                              </div>
-                              
-                              <div class="col-xl-4 mb-5">
-                                <div class="card ind" style="background-image:url(/assets/외대썸네일.png)">
-                                  <div class="card-block">
-                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/2"><%=@numoftodayForeignClub%>개 주점 보러 가기</a></h3>
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                        
-                              <div class="col-xl-4 mb-5">
-                                <div class="card ind" style="background-image:url(/assets/예대썸네일.png)">
-                                  <div class="card-block">
-                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/3"><%=@numoftodayAndClub%>개 주점 보러 가기</a></h3>
-                                    
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                           
-                              <div class="col-xl-4 mb-5">
-                                <div class="card ind" style="background-image:url(/assets/체대썸네일.png)">
-                                  <div class="card-block">
-                                    
-                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/4"><%=@numoftodaySportsClub%>개 주점 보러 가기</a></h3>
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                      
-                              <div class="col-xl-4 mb-5">
-                                <div class="card ind" style="background-image:url(/assets/국제대썸네일.png)">
-                                  <div class="card-block">
-                                    
-                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/5"><%=@numoftodayKicClub%>개 주점 보러 가기</a></h3>
-                                  </div>
-                                </div>
-                              </div>
-                              
-                              <div class="col-xl-4 mb-5">
-                                <div class="card ind" style="background-image:url(/assets/자대썸네일.png)">
-                                  <div class="card-block">
-                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/6"><%=@numoftodayEniClub%>개 주점 보러 가기</a></h3>
-                                  </div>
-                                </div>
-                              </div>
-                      
-                              <div class="col-xl-4 mb-5">
-                                <div class="card ind" style="background-image:url(/assets/생대썸네일.png)">
-                                  <div class="card-block">
-                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/7"><%=@numoftodayClsClub%>개 주점 보러 가기</a></h3>
-                                  </div>
-                                </div>
-                              </div>
-                              
-                              <div class="col-xl-4 mb-5">
-                                <div class="card ind" style="background-image:url(/assets/멀관썸네일.png)">
-                                  <div class="card-block">
-                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/8"><%=@numoftodayMultimediaClub%>개 주점 보러 가기</a></h3>
-                                  </div>
-                                </div>
-                              </div>
-
-                      
-                              <div class="col-xl-4 mb-5">
-                                <div class="card ind" style="background-image:url(/assets/학관썸네일.png)">
-                                  <div class="card-block">
-                                    <h3 class="card-title"><a href="/bar/<%=@today_day%>/9"><%=@numoftodayStudentcenterClub%>개 주점 보러 가기</a></h3>
-                                  </div>
-                                </div>
-                              </div>
-
-                     
-
-                    </div>
-                
-          <hr>      
-                
+       <img class="map mx-3" src="/assets/hot.png" style="width:50%; height:50%">       
+       <div class="margin-small mb-3" style="text-align:center">
+       <h4>오늘 <%=@numofTodayClubs%> 개의 주점이 열렸습니다.<br></h4>
+       </div>
+       <div class="container today_link" >
+        <div class="col-xl-4 mb-5" onclick="location.href='/bar/<%=@today_day%>/1'">
+          <div class="card ind" style="background-image:url(/assets/공대썸네일.png)">
+            <div class="card-block" >
+             <h4  class="card-title"><%=@numoftodayEngClub%>개 주점 보러 가기</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-5" onclick="location.href='/bar/<%=@today_day%>/2'">
+          <div class="card ind" style="background-image:url(/assets/외대썸네일.png)">
+            <div class="card-block">
+              <h4 class="card-title"><%=@numoftodayForeignClub%>개 주점 보러 가기</h4>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-xl-4 mb-5" onclick="location.href='/bar/<%=@today_day%>/3'">
+          <div class="card ind" style="background-image:url(/assets/예대썸네일.png)">
+            <div class="card-block">
+              <h4 class="card-title"><%=@numoftodayAndClub%>개 주점 보러 가기</h4>
+              
+              
+            </div>
+          </div>
+        </div>
+     
+        <div class="col-xl-4 mb-5" onclick="location.href='/bar/<%=@today_day%>/4'">
+          <div class="card ind" style="background-image:url(/assets/체대썸네일.png)">
+            <div class="card-block">
+              
+              <h4 class="card-title"><%=@numoftodaySportsClub%>개 주점 보러 가기</h4>
+              
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-xl-4 mb-5" onclick="location.href='/bar/<%=@today_day%>/5'">
+          <div class="card ind" style="background-image:url(/assets/국제대썸네일.png)">
+            <div class="card-block">
+              
+              <h4 class="card-title"><%=@numoftodayKicClub%>개 주점 보러 가기</h4>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-xl-4 mb-5" onclick="location.href='/bar/<%=@today_day%>/6'">
+          <div class="card ind" style="background-image:url(/assets/자대썸네일.png)">
+            <div class="card-block">
+              <h4 class="card-title"><%=@numoftodayEniClub%>개 주점 보러 가기</h4>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-xl-4 mb-5" onclick="location.href='/bar/<%=@today_day%>/7'">
+          <div class="card ind" style="background-image:url(/assets/생대썸네일.png)">
+            <div class="card-block">
+              <h4 class="card-title"><%=@numoftodayClsClub%>개 주점 보러 가기</h4>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-xl-4 mb-5" onclick="location.href='/bar/<%=@today_day%>/8'">
+          <div class="card ind" style="background-image:url(/assets/멀관썸네일.png)">
+            <div class="card-block">
+              <h4 class="card-title"><%=@numoftodayMultimediaClub%>개 주점 보러 가기</h4>
+            </div>
+          </div>
+        </div>
+  
+  
+        <div class="col-xl-4 mb-5" onclick="location.href='/bar/<%=@today_day%>/9'">
+          <div class="card ind" style="background-image:url(/assets/학관썸네일.png)">
+            <div class="card-block">
+              <h4 class="card-title"><%=@numoftodayStudentcenterClub%>개 주점 보러 가기</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>      
     </body>
-    
 </html>

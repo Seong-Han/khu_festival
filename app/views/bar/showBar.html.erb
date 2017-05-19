@@ -17,9 +17,10 @@
     <% @Bars.each do |y| %>
         <div class="card">
           <span class="card-header"><h2>주점이름 : <%= y.bar_name %></h2>&nbsp;동아리 이름 : <%= y.club_name %></span> 
+          
           <div class="card-block">
-            <h4 class="card-title">주점의 특징 : <%= y.bar_feature %></h4>
-            <p class="card-text">
+            
+            <p class="card-text mb-2">
                      <table class="table">
                          <thead class="thead-inverse">
                              <tr>
@@ -40,6 +41,7 @@
                                 
                             </tbody>
                      </table>
+                     <h4>주점의 특징 : <%= y.bar_feature %></h4>
                    
               
             </p>

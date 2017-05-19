@@ -14,6 +14,8 @@
  *= require_self
  */
 
+* { font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
+
 
 #logout > a:visited {
   color:#9B191A;
@@ -27,10 +29,12 @@
   padding-left:0px;
   padding-right:0px;
 }
-.front_menu>.nav >.mblast{
+
+/*.front_menu>.nav >.mblast{
   margin-right:400px;
-}
+}*/
  @media screen and (max-width: 768px){
+ 
 .front_menu>.nav >.mblast{
   margin-right:0px;
 }
@@ -38,6 +42,7 @@
   margin-left:10px;
 }
  }
+ 
 .btn {
   
 
@@ -100,11 +105,12 @@ button:hover{
   color: black;
   font-weight:bold;
 }
-.imgg:hover{
+.lion:hover{
   opacity: 0.3;
   filter: alpha(opacity=20);
   cursor:pointer;
 }
+
 
 .sign-in{
   color:#9b191a!important;
@@ -113,47 +119,64 @@ button:hover{
   margin-top:11px;
 }
 ul>imggg{
-   padding-left:5px}
+   padding-left:5px
+  
+}
 .navbar-right{
   color:#9b191a!important;
   padding-top:20px;
   font-weight:bold;
   margin-top:11px;
 }
+
  imggg{
   padding-left: 0px
 }
-@media screen and (max-width: 768px) {
-.imggg{
- padding-right:20px;
 
+ li>.lion{
+   width:650px;
+   
+   
 }
-.sign-in{
-color:#9b191a!important;
-padding-top:0px;
-padding-left:5;
-padding-right:0;
-
-
-
-font-weight:bold;
-margin-top:11px;
-font-size:0.5rem;
-}
-.navbar-right{
+  .container > ul >.imggg{
+   padding-right:10px;
+   padding-left:0px!important;
+  }
+  @media screen and (max-width: 768px) {
+  
+    .container > ul >.imggg{
+   padding-right:0px;
+   padding-left:0px!important;
+  }
+  
+  .sign-in{
   color:#9b191a!important;
   padding-top:0px;
-  padding-left:0;
+  padding-left:5;
   padding-right:0;
+  
+  
   
   font-weight:bold;
   margin-top:11px;
   font-size:0.5rem;
-}
-li>.imgg{
-  width:200px;
-}
-}
+  }
+  .navbar-right{
+    color:#9b191a!important;
+    padding-top:0px;
+    padding-left:0;
+    padding-right:0;
+    
+    font-weight:bold;
+    margin-top:11px;
+    font-size:0.5rem;
+  }
+  li>.lion{
+    width:200px;
+  }
+  }
+
+
 .front_menu{
     background-color : #9B191A;
 }
@@ -167,8 +190,8 @@ li>.imgg{
   display:block;
   width:60%;
   height:60%;
-  
 }
+
      .footer_first:hover {
 opacity:0.4;
 filter:alpha(opacity=80); 
