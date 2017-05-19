@@ -1,30 +1,34 @@
 
 <style>
- 
+ <link href="/app/stylesheets/sns.css" rel="stylesheet">
 
 </style>
 
 <div class="container mt-5" >
-  <h1>경희인들의 소통의 장</h1>
+  <h2>경희인들의 소통의 장</h2>
   <form action="/sns/create" method="post">
        <div class="form-group mt-3">
         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="100자 이내로 작성해주세요." name="content" maxlength="100" required>
       </div>
        <button type="submit" class="btn btn-outline-danger mb-3">댓글 작성</button>
   </form>
-  
+    
   <% @comments.each do |x| %>
-  <ul style=list-style:none;>
+  <ul style="list-style:none; padding:0px">
    <li>
         <span><%= x.user.name %></span>
         <span><%= x.created_at %></span>
+        <% if current_user.id == 1 %> <!-- 슈퍼 계정(id=1) 일때는 삭제버튼이 다 보인다.) -->
+         <button class="btn com mb-1" type="button"  onclick="location.href='/sns/destroy/<%=x.id%>'">삭제</button>
+        <% end %>
          <p><%= x.comment %><% if x.user.id == current_user.id %>
-           
-         </p><button class="d btn btn-default" onclick="location.href='/sns/destroy/<%=x.id%>'">삭제</button><% end %>
+         </p>    <button class="c btn btn-outline-danger com mb-1" type="button"  onclick="location.href='/sns/destroy/<%=x.id%>'">삭제</button>
+                
+         <% end %>
    </li>
   </ul>
   <% end %>
-
+<%= will_paginate @comments, previous_label: "이전", next_label: "다음", inner_window: 1, outer_window: 0 %>
 </div>
 <div class="container">
 

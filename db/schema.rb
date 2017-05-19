@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170515135451) do
     t.string   "department_name"
     t.string   "club_name"
     t.string   "bar_name"
-    t.integer  "bar_location"
+    t.string   "bar_location"
     t.string   "bar_feature"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

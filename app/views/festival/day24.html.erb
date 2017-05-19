@@ -2,6 +2,18 @@
 <html>
   <head>
     <style>
+    
+.btn-toolbar{
+    display:flex;
+    justify-content:center;
+}
+ 
+     .carousel-item > img {
+          display: block;
+          margin: 0 auto;
+          height:none;
+          width:40%; height:40%;
+          }
        .carousel-control-prev
     {background-color:#BDBDBD ;
     opacity:0.8;
@@ -13,7 +25,7 @@
     width:5%;
     }
     
- ul{list-style:none;}
+     ul{list-style:none;}
     a:link{text-decoration:none;color:white;}
    a:visited{color:white;} 
      .club{
@@ -25,44 +37,31 @@
      	color:white;
      	font-size:20px;
      }
-  
- 
-      .btn-toolbar{
-          display:flex;
-          justify-content:center;
-      }
+       
+@media screen and (max-width: 768px) {
+  .container>.btn-group-lg>.btn{
+    font-size : 9px;
+    padding: 6px 6px;
+  }
+ .carousel-inner> .carousel-item > img {
+      display: block;
+      margin: 0 auto;
+      height:none;
+      width:65%; height:80%;
+  }
+
+     .club{
+ 	display:flex;
+ 	list-style:none;
+ 	justify-content:space-between;
+ 	background: #9B191A;
+ 	margin:0px;
+ 	padding:0px;
+ 	color:white;
+ 	font-size:10px;
+ }
+}
      
-     .carousel-item > img {
-          display: block;
-          margin: 0 auto;
-          height:none;
-          width:50%; height:50%;
-          }
-      }
-     
-          @media screen and (max-width: 768px) {
-      .container>.btn-group-lg>.btn{
-        font-size : 9px;
-        padding: 6px 6px;
-      }
-     .carousel-inner> .carousel-item > img {
-          display: block;
-          margin: 0 auto;
-          height:none;
-          width:80%; height:80%;
-      }
-         .club{
-     	display:flex;
-     	list-style:none;
-     	justify-content:space-between;
-     	background: #9B191A;
-     	margin:0px;
-     	padding:0px;
-     	color:white;
-     	font-size:10px;
-     }
-      }
-      
     </style>
     
   </head>
@@ -78,15 +77,7 @@
                   <img class="d-block img-fluid" src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/18403453_769016159938776_8906445352433152853_n.jpg?oh=db057018fc3bdaba12a184591e80f636&oe=5975C755" alt="First slide">
                 </div>
                 
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" color="black">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-                </a>
-                
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-                </a>
+              
       </div>
     </div>
     <hr>
@@ -96,11 +87,11 @@
 
      
     <div class="container mt-4 mb-3" >
-    	<ul class="club py-2 px-3" >
-          <li><a href ="/bar/24/7">생명과학대학</a></li>
+  	<ul class="club py-2 px-3" >
+      <li><a href ="/bar/24/7">생명과학대학</a></li>
           <li><a href ="/bar/24/3">예술디자인대학</a></li>
           <li><a href ="/bar/24/6">전자정보대학</a></li>
-          <li><a href ="/bar/24/8">멀티미디어관</a></li>
+          <li><a href ="/bar/24/8">응용과학대학</a></li>
         </ul>
          
         <ul class="club pb-2 px-3">

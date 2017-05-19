@@ -20,8 +20,8 @@
   
   
     <div class="conainer form-group">
-
-      <label class="mr-sm-2" for="inlineFormCustomSelect">선택된 주점 날짜 : <%=@registeredClub.day%>일</label>
+      <label class="mr-sm-2 my-3" for="inlineFormCustomSelect" style="font-weight:bold">* 는 필수 입력사항입니다.</label><br>
+      <label class="mr-sm-2" for="inlineFormCustomSelect" style="font-weight:bold">선택된 주점 날짜 : <%=@registeredClub.day%>일</label>
       
     </div>
     
@@ -29,23 +29,23 @@
   <div class="conainer form-group">
              <% case @registeredClub.univ_id  %>
     <%   when  1 %>
-            <label class="mr-sm-2" for="inlineFormCustomSelect">선택된 단과 대학 : 공과대학</label>
+            <label class="mr-sm-2" for="inlineFormCustomSelect" style="font-weight:bold">선택된 단과 대학 : 공과대학</label>
     <%   when 2 %>
-            <label class="mr-sm-2" for="inlineFormCustomSelect">선택된 단과 대학 : 외국어대학</label>
+            <label class="mr-sm-2" for="inlineFormCustomSelect" style="font-weight:bold">선택된 단과 대학 : 외국어대학</label>
     <%   when 3 %>
-            <label class="mr-sm-2" for="inlineFormCustomSelect">선택된 단과 대학 : 예술대학</label>
+            <label class="mr-sm-2" for="inlineFormCustomSelect" style="font-weight:bold">선택된 단과 대학 : 예술대학</label>
     <%   when 4 %>
-            <label class="mr-sm-2" for="inlineFormCustomSelect">선택된 단과 대학 : 체육대학</label> 
+            <label class="mr-sm-2" for="inlineFormCustomSelect" style="font-weight:bold">선택된 단과 대학 : 체육대학</label> 
     <%   when 5 %>
-             <label class="mr-sm-2" for="inlineFormCustomSelect">선택된 단과 대학 : 국제대</label>
+             <label class="mr-sm-2" for="inlineFormCustomSelect" style="font-weight:bold">선택된 단과 대학 : 국제대</label>
     <%   when 6 %>
-            <label class="mr-sm-2" for="inlineFormCustomSelect">선택된 단과 대학 : 자대</label>
+            <label class="mr-sm-2" for="inlineFormCustomSelect" style="font-weight:bold">선택된 단과 대학 : 자대</label>
     <%   when 7 %>
-            <label class="mr-sm-2" for="inlineFormCustomSelect">선택된 단과 대학 : 생대</label>
+            <label class="mr-sm-2" for="inlineFormCustomSelect" style="font-weight:bold">선택된 단과 대학 : 생대</label>
     <%   when 8 %>
-            <label class="mr-sm-2" for="inlineFormCustomSelect">선택된 단과 대학 : 멀관</label>
+            <label class="mr-sm-2" for="inlineFormCustomSelect" style="font-weight:bold">선택된 단과 대학 : 멀관</label>
     <%   when 9 %>
-            <label class="mr-sm-2" for="inlineFormCustomSelect">선택된 단과 대학 : 학관</label>
+            <label class="mr-sm-2" for="inlineFormCustomSelect" style="font-weight:bold">선택된 단과 대학 : 학관</label>
     <% end %>
     
     </div>
@@ -60,18 +60,18 @@
 
     -->
     <div class="form-group">
-      <label for="formGroupExampleInput">소속 학과 입력</label>
+      <label for="formGroupExampleInput" style="font-weight:bold">소속 학과 입력</label>
       <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ex)컴퓨터공학과. 중앙동아리는 중앙동아리라고 적어주세요" name="department_name" value="<%=@registeredClub.department_name%>" required>
     </div>
     <br>
     
   <div class="form-group">
-    <label for="formGroupExampleInput">동아리 이름</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ex)멋쟁이 사자처럼" name="club_name" value="<%=@registeredClub.club_name%>" required>
+    <label for="formGroupExampleInput" style="font-weight:bold">* 동아리 이름</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ex)멋쟁이 사자처럼/과주점이면 과주점이라고 적어주세요" name="club_name" value="<%=@registeredClub.club_name%>" required>
   </div>
 <br>
   <div class="form-group">
-    <label for="formGroupExampleInput">주점이름</label>
+    <label for="formGroupExampleInput" style="font-weight:bold">* 주점이름</label>
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ex)흥청망청" name="bar_name" value="<%=@registeredClub.bar_name%>" required>
   </div>
 <br>
@@ -85,98 +85,23 @@
   
   <% case @registeredClub.univ_id  %>
     <%   when  1 %>
-              <% case @registeredClub.day %>
-                    <% when 22 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 23 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 23일 주점 지도출력-->
-                    <% when 24 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 24일 주점 지도출력-->
-                    <% when 25 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 25일 주점 지도출력-->
-                    <% when 26 %>
-                       <img src="/assets/26_1.jpg" alt="주점지도" width="80%" height="80%">                        <!-- 공대 26일 주점 지도출력-->                       
-              <% end %>
+              <img src="/assets/공대배치도.png" alt="공대배치도" width="80%" height="80%">
     <%   when 2 %>
-              <% case @day %>
-                    <% when 22 %>
-                       <img src="/assets/전체지도2.jpg" alt="주점지도">                        <!--  22일 주점 지도출력-->
-                    <% when 23 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 24 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 25 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 26 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->                       
-              <% end %>
+              <img src="/assets/외대배치도.png" alt="외대배치도" width="80%" height="80%">
     <%   when 3 %>
-              <% case @day %>
-                    <% when 22 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 23 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 24 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 25 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 26 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->                       
-              <% end %>              
+              <img src="/assets/예대배치도.png" alt="예대배치도" width="80%" height="80%">
     <%   when 4 %>
-              <% case @day %>
-                    <% when 22 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 23 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 24 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 25 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 26 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->                       
-              <% end %>
+              <img src="/assets/체대배치도.png" alt="체대배치도" width="80%" height="80%">
     <%   when 5 %>
-              <% case @day %>
-                    <% when 22 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 23 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 24 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 25 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 26 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->                       
-              <% end %>
+              <img src="/assets/국제대학배치도.png" alt="국제대배치도" width="80%" height="80%">
     <%   when 6 %>
-              <% case @day %>
-                    <% when 22 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 23 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 24 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 25 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 26 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->                       
-              <% end %>
+              <img src="/assets/자대배치도.png" alt="전자대배치도" width="80%" height="80%">
     <%   when 7 %>
-              <% case @day %>
-                    <% when 22 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 23 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 24 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 25 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->
-                    <% when 26 %>
-                       <img src="..." alt="주점지도">                        <!-- 공대 22일 주점 지도출력-->                       
-              <% end %>
-              
-    
+              <img src="/assets/생대배치도.png" alt="생대배치도" width="80%" height="80%">
+    <%   when 8 %>          
+              <img src="/assets/응용과학대학배치도.png" alt="응용과학대학배치도" width="80%" height="80%">
+    <%   when 9 %>
+              <img src="/assets/학생회관배치도.png" alt="학생회관배치도" width="80%" height="80%">
     <% end %>
     
   </div>
@@ -185,12 +110,12 @@
 
 <br>
   <div class="form-group">
-    <label for="formGroupExampleInput">주점 위치</label>
-    <input type="number" class="form-control" id="formGroupExampleInput" placeholder="위의 지도를 보고 몇번에 위치해있는지 적어주세요." name="bar_location" value="<%=@registeredClub.bar_location%>" required>
+    <label for="formGroupExampleInput" style="font-weight:bold">* 주점 위치</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="위의 지도를 보고 몇번에 위치해있는지 적어주세요." name="bar_location" value="<%=@registeredClub.bar_location%>" required>
   </div>
 <br>  
   <div class="form-group">
-    <label for="formGroupExampleInput">주점 특징</label>
+    <label for="formGroupExampleInput" style="font-weight:bold">주점 특징</label>
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="다른 주점하고 뭐가 다른지 간단하게 적어주세요." name="bar_feature" value="<%=@registeredClub.bar_feature%>">
   </div>
 

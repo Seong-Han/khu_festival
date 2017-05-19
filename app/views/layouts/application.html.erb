@@ -20,7 +20,7 @@
 <div class="container px-0">
   <ul class="nav justify-content-ende my-2 lionbox">
     <% if user_signed_in? %>
-          <li class="imggg col-md-8"><img class="lion"  src="/assets/reallion.png"></li>
+          <li class="imggg col-md-8"><img class="lion" src="/assets/reallion.png" onclick="location.href='/festival/index'"></li>
           <li class="sign-in offset-xl-2 col-md-1" onclick="location.href='/users/sign_in'">
           <%= current_user.name %>
           </li>

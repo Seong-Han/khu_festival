@@ -15,8 +15,6 @@
  */
 
 * { font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
-
-
 #logout > a:visited {
   color:#9B191A;
 }
@@ -34,7 +32,6 @@
   margin-right:400px;
 }*/
  @media screen and (max-width: 768px){
- 
 .front_menu>.nav >.mblast{
   margin-right:0px;
 }
@@ -46,7 +43,7 @@
 .btn {
   
 
-  font-size:1.5rem;
+  font-size:1.2rem;
 }
 @media screen and (max-width: 768px){
 .btn{

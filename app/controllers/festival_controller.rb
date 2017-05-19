@@ -59,8 +59,8 @@ class FestivalController < ApplicationController
     @numoftodayEniClub=Club.where(:day => today_day,:univ_id => 6).count()# 오늘의 자대 주점 개수
     @todayClsClub=Club.where(:day => today_day,:univ_id => 7) # 오늘의 생대 주점
     @numoftodayClsClub=Club.where(:day => today_day,:univ_id => 7).count()# 오늘의 생대 주점 개수
-    @todayMultimediaClub=Club.where(:day => today_day,:univ_id => 8) # 오늘의 멀관 주점
-    @numoftodayMultimediaClub=Club.where(:day => today_day,:univ_id => 8).count()# 오늘의 멀관 주점 개수
+    @todayApplsciClub=Club.where(:day => today_day,:univ_id => 8) # 오늘의 응용대 주점
+    @numoftodayApplsciClub=Club.where(:day => today_day,:univ_id => 8).count()# 오늘의 응용대 주점 개수
     @todayStudentcenterClub=Club.where(:day => today_day,:univ_id => 9) # 오늘의 학관 주점
     @numoftodayStudentcenterClub=Club.where(:day => today_day,:univ_id => 9).count()# 오늘의 학관 주점 개
     end

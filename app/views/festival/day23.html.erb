@@ -4,10 +4,19 @@
   <head>
     <link href="/app/stylesheets/day23.scss" rel="stylesheet">
     <style>
-      
-   
-      
-     .carousel-control-prev
+  
+.btn-toolbar{
+    display:flex;
+    justify-content:center;
+}
+ 
+     .carousel-item > img {
+          display: block;
+          margin: 0 auto;
+          height:none;
+          width:40%; height:40%;
+          }
+       .carousel-control-prev
     {background-color:#BDBDBD ;
     opacity:0.8;
     width:5%;
@@ -18,11 +27,10 @@
     width:5%;
     }
     
-  ul{list-style:none;}
+     ul{list-style:none;}
     a:link{text-decoration:none;color:white;}
    a:visited{color:white;} 
-   
- .club{
+     .club{
      	display:flex;
      	list-style:none;
      	justify-content:space-around;
@@ -31,41 +39,31 @@
      	color:white;
      	font-size:20px;
      }
-    .btn-toolbar{
-          display:flex;
-          justify-content:center;
-      }
+       
+@media screen and (max-width: 768px) {
+  .container>.btn-group-lg>.btn{
+    font-size : 9px;
+    padding: 6px 6px;
+  }
+ .carousel-inner> .carousel-item > img {
+      display: block;
+      margin: 0 auto;
+      height:none;
+      width:65%; height:80%;
+  }
+
+     .club{
+ 	display:flex;
+ 	list-style:none;
+ 	justify-content:space-between;
+ 	background: #9B191A;
+ 	margin:0px;
+ 	padding:0px;
+ 	color:white;
+ 	font-size:10px;
+ }
+}
      
-     .carousel-item > img {
-          display: block;
-          margin: 0 auto;
-          height:none;
-          width:50%; height:50%;
-          }
-      }
-      
-         @media screen and (max-width: 768px) {
-      .container>.btn-group-lg>.btn{
-        font-size : 9px;
-        padding: 6px 6px;
-      }
-     .carousel-inner> .carousel-item > img {
-          display: block;
-          margin: 0 auto;
-          height:none;
-          width:80%; height:80%;
-      }
-         .club{
-     	display:flex;
-     	list-style:none;
-     	justify-content:space-between;
-     	background: #9B191A;
-     	margin:0px;
-     	padding:0px;
-     	color:white;
-     	font-size:10px;
-     }
-      }
     </style>
     
   </head>
@@ -122,10 +120,10 @@
           
     <div class="container mt-4 mb-3" >
     	<ul class="club py-2 px-3" >
-          <li><a href ="/bar/23/7">생명과학대학</a></li>
+      <li><a href ="/bar/23/7">생명과학대학</a></li>
           <li><a href ="/bar/23/3">예술디자인대학</a></li>
           <li><a href ="/bar/23/6">전자정보대학</a></li>
-          <li><a href ="/bar/23/8">멀티미디어관</a></li>
+          <li><a href ="/bar/23/8">응용과학대학</a></li>
         </ul>
          
         <ul class="club pb-2 px-3">

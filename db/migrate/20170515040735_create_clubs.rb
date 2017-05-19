@@ -7,7 +7,7 @@ class CreateClubs < ActiveRecord::Migration
       t.string :department_name # 학과 이름
       t.string :club_name # 동아리 이름
       t.string :bar_name # 주점 이름
-      t.integer :bar_location # 주점 위치
+      t.string :bar_location # 주점 위치
       t.string :bar_feature # 주점 특징
       
      

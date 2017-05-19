@@ -1,14 +1,19 @@
-<style>
-.btn {
-    background-color:#9B191A; 
-}
+  <style>
+
+  .btn {
+      background-color:#9B191A; }
+
 </style>
-<script>
-function btn_is_alert(){
-  /* alert(문자열) */
-  alert("메뉴판이 성공적으로 수정되었습니다.");
-  location.href='/festival/index';
-}
+ <script>
+
+       	function btn_is_alert(){
+      	  /* alert(문자열) */
+      	  alert("메뉴판이 성공적으로 수정되었습니다.");
+      	  location.href='/festival/index';
+      	}
+
+
+
  </script>
  <div class="container">
  <h1>메뉴를 수정해주세요!</h1>
@@ -32,7 +37,7 @@ function btn_is_alert(){
               <th scope="row"></th>
               <td><%=x.menu_name%></td>
               <td><%=x.menu_price%></td>
-              <td><button type="button" class="btn btn-primary"><a href="/menudestroy/<%=@univ_id%>/<%=@club_id%>/<%=x.id%>">삭제</a></button> </td>
+              <td><button type="button" class="btn" onclick="location.href='/menudestroy/<%=@univ_id%>/<%=@club_id%>/<%=x.id%>'" style="color:white">삭제</button> </td>
           </tr>
       <% end %>
 

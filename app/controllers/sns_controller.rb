@@ -1,7 +1,7 @@
 class SnsController < ApplicationController
   before_action :authenticate_user!
   def main
-    @comments = Comment.all.reverse
+    @comments = Comment.all.order('created_at desc').paginate(page: params[:page], per_page: 20)
     
   end
 
