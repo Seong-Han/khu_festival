@@ -4,8 +4,8 @@
 
 </style>
 
-<div class="container mt-5" >
-  <h2>경희인들의 소통의 장</h2>
+<div class="container mt-3" >
+  <h4>경희인들의 소통의 장</h4>
   <form action="/sns/create" method="post">
        <div class="form-group mt-3">
         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="100자 이내로 작성해주세요." name="content" maxlength="100" required>
@@ -14,7 +14,7 @@
   </form>
     
   <% @comments.each do |x| %>
-  <ul style="list-style:none; padding:0px">
+  <ul style="list-style:none; padding:0px; font-size:15px">
    <li>
         <span><%= x.user.name %></span>
         <span><%= x.created_at %></span>
