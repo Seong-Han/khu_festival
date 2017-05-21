@@ -53,8 +53,8 @@
         <div class="card card_menu" >
           <span class="card-header"><h4 style="font-size:1.3rem; font-weight:bold">주점이름 : <%= y.bar_name %></h4>동아리 이름 : <%= y.club_name %></span> 
           
-          <div class="card-block">
-            
+          <div class="card-block pt-2">
+            <h5 style="font-size:0.8rem"><%= y.bar_feature %></h5>
             <p class="card-text mb-2">
                      <table class="table">
                          <thead class="thead-inverse">
@@ -76,7 +76,7 @@
                                 
                             </tbody>
                      </table>
-                     <h5 style="font-size:0.8rem;">주점의 특징 : <%= y.bar_feature %></h5>
+                     
                    
               
             </p>
@@ -92,5 +92,4 @@
         </div>
         <br>
         
-    <% end %>       
-    
+    <% end %> 
