@@ -3,9 +3,17 @@
   .btn {
       background-color:#9B191A; } 
   
+  card_menu{
+  font-size:1rem;
+  }
+  
+  
   @media screen and (max-width: 768px) {
   .btn{
     font-size:0.8rem;
+  }
+  .card_menu{
+    font-size:0.8rem
   }
     
   }
@@ -38,12 +46,12 @@
     
     
     <% if @numofBars == 0 %>
-     <h3 style="text-align: center">등록된 주점이 없습니다.</h3>
+     <h4 style="text-align: center">등록된 주점이 없습니다.</h4>
     <% end %>
 
     <% @Bars.each do |y| %>
-        <div class="card">
-          <span class="card-header"><h2>주점이름 : <%= y.bar_name %></h2>&nbsp;동아리 이름 : <%= y.club_name %></span> 
+        <div class="card card_menu" >
+          <span class="card-header"><h4 style="font-size:1.3rem; font-weight:bold">주점이름 : <%= y.bar_name %></h4>동아리 이름 : <%= y.club_name %></span> 
           
           <div class="card-block">
             
@@ -68,7 +76,7 @@
                                 
                             </tbody>
                      </table>
-                     <h4>주점의 특징 : <%= y.bar_feature %></h4>
+                     <h5>주점의 특징 : <%= y.bar_feature %></h5>
                    
               
             </p>
